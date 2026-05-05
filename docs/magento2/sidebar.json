@@ -2,7 +2,10 @@
   {
     "text": "Magento 2",
     "items": [
-      { "text": "Overview", "link": "/magento2/" }
+      { "text": "Overview", "link": "/magento2/" },
+      { "text": "Installation", "link": "/magento2/installation" },
+      { "text": "Configuration", "link": "/magento2/configuration" },
+      { "text": "Usage", "link": "/magento2/usage" }
     ]
   }
 ]

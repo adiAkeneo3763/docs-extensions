@@ -2,7 +2,10 @@
   {
     "text": "Shopify",
     "items": [
-      { "text": "Overview", "link": "/shopify/" }
+      { "text": "Overview", "link": "/shopify/"},
+      { "text": "Installation", "link": "/shopify/installation" },
+      { "text": "Configuration", "link": "/shopify/configuration" },
+      { "text": "Usage", "link": "/shopify/usage" }
     ]
   }
 ]
