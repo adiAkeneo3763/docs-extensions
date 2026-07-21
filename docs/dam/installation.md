@@ -15,6 +15,29 @@ Choose the method that best fits your project setup.
 
 ---
 
+## Requirements
+
+| Requirement | Version |
+|---|---|
+| **UnoPim** | v2.1.x |
+| **PHP** | 8.3 or higher |
+
+### Optional server tools
+
+DAM generates real thumbnails for PDFs and videos using two command-line tools. They are optional — without them, those file types fall back to generic icons — but installing them up front saves you a [backfill](./commands.md#dambackfill-thumbnails) later.
+
+```bash
+# Debian / Ubuntu
+sudo apt install ffmpeg poppler-utils
+```
+
+| Tool | Used for |
+|---|---|
+| `ffmpeg` | Video first-frame thumbnails |
+| `poppler-utils` (`pdftoppm`) | PDF first-page thumbnails |
+
+---
+
 ## Composer Installation
 
 Composer Installation is the recommended approach for quick setup.
@@ -45,7 +68,22 @@ php artisan optimize:clear
 | `php artisan dam-package:install` | Runs the DAM package installer and applies required setup steps. |
 | `php artisan optimize:clear` | Clears all cached files (bootstrap, configuration, routes, and views) to load the new changes. |
 
+The installer is interactive and asks two questions:
+
+| Prompt | Default | What to answer |
+|---|---|---|
+| *Run the migrations now?* | Yes | Say **yes** — DAM cannot work without its tables. |
+| *Seed demo data?* | No | Say **yes** on an evaluation or development install to get a pre-populated library (Accessories, Audio and Video, Clothes, Documents). Say **no** on production. |
+
+![Terminal running dam-package:install, showing the migration prompt and the demo data prompt](./assets/placeholder.png)
+
+You can seed the demo data later at any time with [`php artisan dam:demo-data`](./commands.md#damdemo-data).
+
 **Installation complete!** Your UnoPim DAM is now ready to use.
+
+![The DAM icon in the UnoPim admin sidebar after a successful installation](./assets/placeholder.png)
+
+![The DAM media library on first load, showing the Root directory and empty asset gallery](./assets/placeholder.png)
 
 ---
 
@@ -160,6 +198,20 @@ sudo service supervisor restart
 |---|---|
 | `sudo service supervisor restart` | Restarts Supervisor and its managed queue workers. |
 
+> [!IMPORTANT]
+> A queue worker is not optional. Uploads, thumbnail generation, and other DAM background jobs all run on the queue. Without a worker, uploads will appear to hang and thumbnails will never appear.
+
+---
+
+## Next Steps
+
+1. [**Set up permissions**](./setup.md) — create roles and grant DAM permissions, and create the Asset attribute and category field.
+2. [**Scope roles to directories**](./directory-permissions.md) — restrict a role to specific folders, if you need to.
+3. [**Review the configuration**](./configuration.md) — directory tree behaviour, Explorer view, upload tuning.
+
 ---
 
 **Your UnoPim DAM installation is complete and ready to use.**
+
+> [!NOTE]
+> Already running an older DAM version? See [Upgrading DAM](./upgrading.md) instead.
