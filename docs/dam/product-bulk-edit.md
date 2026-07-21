@@ -10,24 +10,16 @@ Any product attribute of type **Asset** (see [Setup](./setup.md#create-product-a
 
 1. Go to **Catalog → Products**, select the products you want to change, and open **Bulk Edit**.
 
-![Catalog > Products grid with several products selected and the Bulk Edit action](./assets/placeholder.png)
-
 2. Find the asset attribute column.
 
-![Product Bulk Edit spreadsheet with an asset attribute column showing asset thumbnails and the picker button](./assets/placeholder.png)
+![Product Bulk Edit spreadsheet with an asset attribute column showing asset thumbnails and the picker button](./assets/product-bulk-edit/bulk-edit-spreadsheet.png)
 
 3. Click the picker button in the cell.
 4. Choose an asset from the DAM library and confirm.
 
-![DAM asset picker modal opened from the bulk edit grid, with the directory tree and asset grid](./assets/placeholder.png)
-
-![Asset picker with an asset selected, ready to confirm](./assets/placeholder.png)
+![DAM asset picker modal opened from the bulk edit grid, with the directory tree and asset grid](./assets/product-bulk-edit/asset-picker-modal.png)
 
 5. Repeat for the other rows, then save the spreadsheet.
-
-![Product Bulk Edit spreadsheet with asset thumbnails filled in across several product rows, ready to save](./assets/placeholder.png)
-
-![Product edit page after the bulk edit, showing the asset assigned to the product](./assets/placeholder.png)
 
 The picker is the same one used on the product edit page — with the directory tree, directory search, and filters — and it honours your [directory permissions](./directory-permissions.md), so you can only select assets from directories your role can reach.
 
@@ -38,8 +30,6 @@ The same asset-picker cell is available for **category fields** of type Asset.
 ## Drag and Drop
 
 You can drag an asset from the picker directly onto the target cell instead of clicking through the confirm button.
-
-![Dragging an asset from the DAM picker onto a cell in the bulk edit spreadsheet](./assets/placeholder.png)
 
 ---
 

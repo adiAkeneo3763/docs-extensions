@@ -1,22 +1,40 @@
 # Uploading Assets
 
-UnoPim DAM gives you several ways to get files into your library — a classic upload button, drag-and-drop, and full folder upload that recreates your folder structure inside the DAM.
+UnoPim DAM gives you several ways to get files into your library — the **+ New** menu, drag-and-drop, and full folder upload that recreates your folder structure inside the DAM.
 
 ---
 
-## Ways to Upload
+## The + New Button
+
+Everything you can add to the library starts from the **+ New** button at the top right of the asset gallery. There is no separate upload button — clicking **+ New** opens a short menu:
+
+![The + New button on the DAM asset gallery, with its menu open showing Upload Files, Upload Folder and Add Directory](./assets/uploading-assets/new-button-menu.png)
+
+| Menu item | What it does |
+|---|---|
+| **Upload Files** | Opens the file picker. Choose one or more files; they upload into the directory you are currently viewing. |
+| **Upload Folder** | Opens the folder picker. DAM uploads the whole folder tree and recreates its structure — see [Folder Upload](#folder-upload). |
+| **Add Directory** | Creates a new subfolder in the current directory. |
+
+> [!NOTE]
+> **Add Directory** only appears if your role has the create-directory permission (`dam.directory.store`). The two upload options are always shown; whether a given directory actually accepts an upload is checked separately. See [Directory Permissions](./directory-permissions.md).
+
+Uploads always go to **the directory you are currently in**, shown in the breadcrumb above the gallery. Navigate to the target folder first, then use **+ New**.
+
+---
+
+## Other Ways to Upload
 
 | Method | How to use it |
 |---|---|
-| **Upload button** | Click **Upload** on the asset gallery to pick one or more files and add them to the current directory. |
 | **Drag and drop** | Drag files straight from your desktop onto the gallery. A drop zone appears reading *"Drop files or folders to upload"*. |
-| **Right-click → Upload Files** | Right-click a directory in the tree and choose **Upload Files** to upload into that specific folder. |
-| **Right-click → Upload Folder** | Right-click a directory and choose **Upload Folder** to upload an entire folder tree. |
-
-![DAM asset gallery with the drag-and-drop zone active, showing the "Drop files or folders to upload" overlay](./assets/placeholder.png)
+| **Right-click → Upload Files** | Right-click a directory in the tree and choose **Upload Files** to upload into that specific folder without navigating to it first. |
+| **Right-click → Upload Folder** | Right-click a directory and choose **Upload Folder** to upload an entire folder tree into it. |
 
 > [!NOTE]
 > If you do not have upload permission for the directory you are pointing at, the drop zone tells you so: *"You do not have permission to upload here."* See [Directory Permissions](./directory-permissions.md).
+
+The right-click routes are handy when you want to drop files into a folder you can see in the tree but are not currently browsing. They are available in both the standard gallery and the [Explorer](./explorer.md).
 
 ---
 
@@ -24,15 +42,9 @@ UnoPim DAM gives you several ways to get files into your library — a classic u
 
 Instead of uploading files one directory at a time, you can upload a whole folder and let DAM rebuild the hierarchy for you.
 
-1. Right-click the directory you want to upload into.
-2. Choose **Upload Folder** (or simply drag a folder from your desktop onto the gallery).
+1. Navigate to the directory you want to upload into.
+2. Click **+ New → Upload Folder** — or right-click the directory in the tree and choose **Upload Folder**, or simply drag a folder from your desktop onto the gallery.
 3. Select the folder. DAM recreates every subfolder underneath the target directory and uploads the files into the matching folders.
-
-![Right-click context menu on a directory showing the Upload Files, Upload Folder and Upload Files and Folders options](./assets/placeholder.png)
-
-![Browser folder picker open, with a nested folder selected for upload](./assets/placeholder.png)
-
-![Directory tree after a folder upload, showing the recreated subfolder hierarchy with its assets](./assets/placeholder.png)
 
 Folders that already exist are reused rather than duplicated, so re-uploading the same tree will not create `Images (1)`, `Images (2)`, and so on.
 
@@ -51,9 +63,19 @@ Newly created subfolders are granted to your role automatically, so they are usa
 
 ## Tracking an Upload in Progress
 
+While an upload is running, the **+ New** button itself becomes the status indicator:
+
+- The label changes from **New** to **Uploading...** and the `+` is replaced by a spinner.
+- The button is **greyed out and unclickable**, so you cannot start a second upload on top of the first.
+- A **Cancel** button appears next to it.
+
+The button also locks while a background directory operation is in progress — see [Background Operations](./background-operations.md).
+
+Once the upload finishes, the button reverts to **+ New** and you see *"Upload complete"*.
+
 Large uploads run in the background as queued jobs, with a progress panel that stays visible while files transfer.
 
-![Upload progress panel showing per-file progress bars with Pause, Cancel and Retry buttons](./assets/placeholder.png)
+![Upload progress panel showing per-file progress bars with Pause, Cancel and Retry buttons](./assets/uploading-assets/upload-progress-panel.png)
 
 The panel gives you four controls:
 
@@ -63,12 +85,6 @@ The panel gives you four controls:
 | **Resume** | While the upload is paused | Re-queues every batch that had not finished. *"Upload resumed."* |
 | **Cancel** | While work is outstanding, or while paused | Stops the upload. *"Upload cancelled. Already-uploaded assets were kept."* |
 | **Retry** | When a file failed and nothing else is running | Re-queues the failed files. *"Retrying the failed uploads in the background."* |
-
-![Upload progress panel in the paused state, showing the Resume and Cancel buttons and the "Upload paused" message](./assets/placeholder.png)
-
-![Upload progress panel with a failed file, showing the Failed status and the Retry button](./assets/placeholder.png)
-
-![Upload progress panel on completion, showing all files marked Done with the "x of y uploaded" summary](./assets/placeholder.png)
 
 Already-uploaded files are always kept — pausing or cancelling never rolls back assets that already made it into the library.
 
@@ -80,8 +96,6 @@ Already-uploaded files are always kept — pausing or cancelling never rolls bac
 If you navigate away while an upload is running, DAM warns you first:
 
 > **Upload in Progress** — Leaving this page will cancel the active upload. *(Leave / Stay)*
-
-![The "Upload in Progress" dialog warning that leaving the page will cancel the active upload, with Leave and Stay buttons](./assets/placeholder.png)
 
 ### Resuming after a refresh
 
@@ -96,8 +110,6 @@ DAM does not impose its own size limit. The maximum upload size is whatever your
 If a file exceeds it, the upload is rejected with a clear message:
 
 > The file is too large. Maximum allowed size is 64 MB.
-
-![Upload error showing the "file is too large" message with the maximum allowed size](./assets/placeholder.png)
 
 To raise the limit, increase both values in `php.ini` and restart PHP-FPM:
 
@@ -126,8 +138,6 @@ Rejected files produce one of:
 >
 > Uploading script files is not allowed.
 
-![Upload error showing the "File has forbidden type or extension" message after attempting to upload a blocked file](./assets/placeholder.png)
-
 Additionally, any uploaded file that is not genuine media is always served as a **download** rather than rendered inline, and every asset response carries `X-Content-Type-Options: nosniff` and a restrictive `Content-Security-Policy`. This means a stored HTML or SVG file can never execute script in your site's origin.
 
 ---
@@ -135,8 +145,6 @@ Additionally, any uploaded file that is not genuine media is always served as a 
 ## Re-uploading (Replacing) a File
 
 To swap the file behind an existing asset while keeping its ID, tags, properties, comments, and links intact, open the asset and use **Re-upload**.
-
-![Asset edit page with the Re-upload button highlighted](./assets/placeholder.png)
 
 Uploading a file with the same name into the same directory overwrites the existing asset and clears its cached thumbnail and metadata, so the new version shows immediately.
 

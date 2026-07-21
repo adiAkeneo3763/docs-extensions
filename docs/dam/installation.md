@@ -24,17 +24,30 @@ Choose the method that best fits your project setup.
 
 ### Optional server tools
 
-DAM generates real thumbnails for PDFs and videos using two command-line tools. They are optional — without them, those file types fall back to generic icons — but installing them up front saves you a [backfill](./commands.md#dambackfill-thumbnails) later.
+DAM leans on four command-line tools. All are optional — DAM runs without them — but each one silently disables a feature if it is missing, so installing them up front saves a lot of confusion later (and a [thumbnail backfill](./commands.md#dambackfill-thumbnails)).
 
 ```bash
 # Debian / Ubuntu
-sudo apt install ffmpeg poppler-utils
+sudo apt install ffmpeg poppler-utils libimage-exiftool-perl imagemagick
+
+# RHEL / Alma / Rocky
+sudo dnf install ffmpeg poppler-utils perl-Image-ExifTool ImageMagick
+
+# macOS (Homebrew)
+brew install ffmpeg poppler exiftool imagemagick
 ```
 
-| Tool | Used for |
-|---|---|
-| `ffmpeg` | Video first-frame thumbnails |
-| `poppler-utils` (`pdftoppm`) | PDF first-page thumbnails |
+| Tool | Used for | What breaks without it |
+|---|---|---|
+| `ffmpeg` | Video first-frame thumbnails | Videos show a generic file-type icon |
+| `poppler-utils` (`pdftoppm`) | PDF first-page thumbnails | PDFs show a generic file-type icon |
+| `exiftool` | Embedded metadata (EXIF, IPTC, XMP, ID3) and audio cover art | The **Metadata** tab falls back to basic EXIF for images only; audio cover art never appears |
+| `imagick` (PHP ext.) | Rasterising SVGs for **Custom Download** | Downloading an SVG as JPG/PNG/WebP fails |
+
+> [!IMPORTANT]
+> `exiftool` is the one people miss. Without it the Metadata tab still loads — it just quietly shows far less, with nothing in the UI explaining why. If metadata looks thin, check `exiftool -ver` on the server before anything else.
+
+If you run UnoPim in Docker, add the same packages to the `apt-get install` line in **both** `dockerfiles/fpm.Dockerfile` and `dockerfiles/q.Dockerfile` — the queue worker needs them too, since thumbnail and metadata jobs run there.
 
 ---
 
@@ -75,15 +88,11 @@ The installer is interactive and asks two questions:
 | *Run the migrations now?* | Yes | Say **yes** — DAM cannot work without its tables. |
 | *Seed demo data?* | No | Say **yes** on an evaluation or development install to get a pre-populated library (Accessories, Audio and Video, Clothes, Documents). Say **no** on production. |
 
-![Terminal running dam-package:install, showing the migration prompt and the demo data prompt](./assets/placeholder.png)
-
 You can seed the demo data later at any time with [`php artisan dam:demo-data`](./commands.md#damdemo-data).
 
 **Installation complete!** Your UnoPim DAM is now ready to use.
 
-![The DAM icon in the UnoPim admin sidebar after a successful installation](./assets/placeholder.png)
-
-![The DAM media library on first load, showing the Root directory and empty asset gallery](./assets/placeholder.png)
+![The DAM media library on first load, showing the Root directory and empty asset gallery](./assets/installation/dam-media-library-first-load.png)
 
 ---
 

@@ -4,8 +4,6 @@ DAM ships a built-in image editor so you can crop, adjust, and re-background ima
 
 Open an image preview and click **Edit image** to launch it.
 
-![Asset preview modal with the "Edit image" button highlighted](./assets/placeholder.png)
-
 > [!WARNING]
 > Every edit **overwrites the original file**. There is no separate "save as copy" — if you need to keep the untouched original, download it or duplicate the asset before editing.
 
@@ -18,7 +16,7 @@ Open an image preview and click **Edit image** to launch it.
 
 The editor's left rail holds five tools in an accordion.
 
-![Image editor with the Tools rail on the left showing Crop & Resize, Brightness & Contrast, Rotate & Flip, Filters and Edit Background](./assets/placeholder.png)
+![Image editor with the Tools rail on the left showing Crop & Resize, Brightness & Contrast, Rotate & Flip, Filters and Edit Background](./assets/image-editor/editor-tools-rail.png)
 
 ### 1. Crop & Resize
 
@@ -26,7 +24,7 @@ The editor's left rail holds five tools in an accordion.
 
 Drag the handles on the image to set the crop selection. Optionally set an output **Width (px)** and **Height (px)** to scale the result after cropping — leave both blank to keep the cropped dimensions as they are.
 
-![Crop & Resize tool with the crop overlay handles active on the image](./assets/placeholder.png)
+![Crop & Resize tool with the crop overlay handles active on the image](./assets/image-editor/crop-resize-tool.png)
 
 You must provide at least a crop region or output dimensions, otherwise the editor responds:
 
@@ -38,15 +36,11 @@ You must provide at least a crop region or output dimensions, otherwise the edit
 
 Four sliders: **Brightness**, **Contrast**, **Sharpen**, and **Blur**.
 
-![Brightness & Contrast tool with the Brightness, Contrast, Sharpen and Blur sliders](./assets/placeholder.png)
-
 ### 3. Rotate & Flip
 
 *Transform orientation.*
 
 Rotate by **0°, 90°, 180°, or 270°**, and flip **horizontally** or **vertically**.
-
-![Rotate & Flip tool showing rotation options and horizontal/vertical flip toggles](./assets/placeholder.png)
 
 ### 4. Filters
 
@@ -55,8 +49,6 @@ Rotate by **0°, 90°, 180°, or 270°**, and flip **horizontally** or **vertica
 Toggle **Greyscale** and/or **Invert**. At least one must be selected:
 
 > Select at least one filter to apply.
-
-![Filters tool with the Greyscale and Invert toggles](./assets/placeholder.png)
 
 ### 5. Edit Background
 
@@ -79,23 +71,17 @@ A **Normal / AI** switch controls how the replacement is done:
 | **Normal** | Local flood-fill background replacement, with a live preview as you pick colours. Fast, free, and works best on images with a clean, uniform background. | No |
 | **AI** | The AI provider re-generates the image on the chosen background colour. Handles complex subjects and soft edges (hair, fur, glass) far better. | Yes |
 
-![Edit Background > Color tab with the swatch palette, custom colour picker and the Normal/AI mode switch](./assets/placeholder.png)
-
-![Before and after of a background colour replacement — the original product photo and the same photo on a white background](./assets/placeholder.png)
+![Before and after of a background colour replacement — the original product photo and the same photo on a white background](./assets/image-editor/background-colour-replacement.png)
 
 ### Upload tab
 
 Click to upload your own background image. The AI composites the asset's subject onto the background you supply.
 
-![Edit Background > Upload tab with the "Click to upload a background image" drop area](./assets/placeholder.png)
-
 ### Prompt tab
 
 Describe the background you want in plain English — for example *"a soft-focus marble kitchen counter in warm morning light"* — and the AI generates it behind your subject.
 
-![Edit Background > Prompt tab with the free-text "Describe the background you want…" field](./assets/placeholder.png)
-
-![Result of an AI prompt background — the product composited onto a generated scene](./assets/placeholder.png)
+![Edit Background > Prompt tab with the free-text "Describe the background you want…" field](./assets/image-editor/edit-background-prompt-tab.png)
 
 ---
 
@@ -109,10 +95,6 @@ The three AI-powered background features (AI colour mode, Upload, and Prompt) ne
 2. Choose one of the supported providers — **OpenAI**, **Gemini**, or **xAI**. Other providers cannot generate images and will not appear in the editor.
 3. Enter that provider's API key and save.
 4. Reopen the image editor. The platform and model dropdowns in the background tabs will now be populated.
-
-![Magic AI platform configuration with an OpenAI platform and API key entered](./assets/placeholder.png)
-
-![Image editor background tab with the AI platform and model dropdowns populated from Magic AI](./assets/placeholder.png)
 
 ### Supported models
 

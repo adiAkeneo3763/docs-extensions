@@ -29,10 +29,6 @@ It walks through three steps:
 2. **Publishing** — publishes DAM's config and default assets.
 3. **Demo data** — prompts *"seed demo data?"* (default **no**). Say yes on a fresh evaluation install to get a populated library immediately; say no on production.
 
-![Terminal running dam-package:install, showing the "run the migrations now?" prompt followed by the migration output](./assets/placeholder.png)
-
-![Terminal showing the final "seed demo data?" prompt of dam-package:install and the completed installation message](./assets/placeholder.png)
-
 ---
 
 ## `dam:demo-data`
@@ -45,15 +41,9 @@ php artisan dam:demo-data
 
 The command is idempotent: running it again will not duplicate the demo content.
 
-![Terminal running dam:demo-data, showing the directories and assets being seeded](./assets/placeholder.png)
-
-![DAM asset gallery after seeding, showing the Accessories, Audio and Video, Clothes and Documents demo folders](./assets/placeholder.png)
-
 | Option | Effect |
 |---|---|
 | `--force` | Wipes existing assets and re-seeds from scratch. |
-
-![Terminal showing the dam:demo-data --force confirmation prompt warning that all assets under assets/Root/ will be deleted](./assets/placeholder.png)
 
 > [!DANGER]
 > `--force` deletes **all** assets under `assets/Root/` — not just the demo ones. On a library with real content this destroys your assets. The command asks for explicit confirmation (defaulting to **No**) before it proceeds. Never run it on production.
@@ -70,13 +60,7 @@ php artisan dam:backfill-thumbnails
 
 It finds every video and PDF asset with no stored thumbnail and dispatches a generation job for each.
 
-![Terminal running dam:backfill-thumbnails, showing the count of video and PDF assets queued for thumbnail generation](./assets/placeholder.png)
-
 The difference is easy to see in the gallery — generic file-type icons before, real first-page and first-frame previews after:
-
-![Asset gallery before backfill, with PDF and video assets showing generic file-type icons](./assets/placeholder.png)
-
-![The same asset gallery after backfill, with PDF and video assets showing real thumbnails](./assets/placeholder.png)
 
 | Option | Effect |
 |---|---|
@@ -103,8 +87,6 @@ Prints the installed DAM version.
 php artisan dam:version
 ```
 
-![Terminal running dam:version and printing the installed DAM version number](./assets/placeholder.png)
-
 ---
 
 ## `dam:update`
@@ -124,14 +106,10 @@ It performs the following, in order:
 5. Clears caches.
 6. **Verifies** no rows were lost. If the row count regressed, it fails and prints the restore command.
 
-![Terminal running dam:update, showing the row counts, the backup path under storage/dam-backups, the migrations, and the final verification](./assets/placeholder.png)
-
 | Option | Effect |
 |---|---|
 | `--dry-run` | Shows what would happen without changing anything. |
 | `--skip-backup` | Skips the backup step. Asks for confirmation first. |
-
-![Terminal running dam:update --dry-run, listing the planned steps and current row counts without writing anything](./assets/placeholder.png)
 
 > [!WARNING]
 > Do not use `--skip-backup` unless you have your own database and file backup. The backup is what makes the upgrade reversible.
@@ -148,8 +126,6 @@ List the available backups:
 php artisan dam:update:restore
 ```
 
-![Terminal running dam:update:restore with no argument, listing the available backup timestamps](./assets/placeholder.png)
-
 Restore a specific one, using the folder name from `storage/dam-backups`:
 
 ```bash
@@ -157,8 +133,6 @@ php artisan dam:update:restore 2026-07-13-104500
 ```
 
 It asks for confirmation, then overwrites the DAM tables and asset files with the backup's contents.
-
-![Terminal running dam:update:restore with a timestamp, showing the confirmation prompt and the restore output](./assets/placeholder.png)
 
 ---
 
@@ -177,10 +151,6 @@ The command is interactive and will ask you for:
 | **Email** and **password** | Your admin credentials, to authorise the migration. |
 | *Migrate only new uploaded files?* | **Yes** moves only files not already on S3 — use this to resume or top up an earlier migration. **No** re-processes everything. |
 | *Delete files from local once uploaded?* | **Yes** frees local disk space after each file transfers successfully. Say **no** on the first run so you keep a local copy until you have verified S3 is serving correctly. |
-
-![Terminal running unopim:dam:move-asset-to-s3, showing the email and password prompts followed by the two yes/no migration questions](./assets/placeholder.png)
-
-![Terminal showing the S3 migration progress as assets transfer in batches](./assets/placeholder.png)
 
 Files are transferred in batches of 1,000.
 
@@ -214,8 +184,6 @@ Preview the plan without writing anything:
 ```bash
 php artisan dam:generate-scale-data --dry-run
 ```
-
-![Terminal running dam:generate-scale-data --dry-run, showing the planned asset and directory counts with the [DRY RUN] warning](./assets/placeholder.png)
 
 Generate a smaller, faster set — 50,000 assets across 2,000 directories:
 

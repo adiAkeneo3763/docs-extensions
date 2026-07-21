@@ -29,19 +29,15 @@ Access is controlled by three things:
 
 Open the asset and click **Share** (available on the asset edit page and in the preview modal).
 
-![Asset edit page with the Share button highlighted](./assets/placeholder.png)
-
 ### Sharing a directory
 
 Right-click the directory in the tree and choose **Share Directory**.
-
-![Directory right-click context menu with the Share Directory option highlighted](./assets/placeholder.png)
 
 Both open the same share dialog.
 
 ### Share options
 
-![Share link modal showing the custom name field, expiry dropdown, No expiry switch, and the list of active links](./assets/placeholder.png)
+![Share link modal showing the custom name field, expiry dropdown, No expiry switch, and the list of active links](./assets/shared-links/share-link-modal.png)
 
 | Option | What it does |
 |---|---|
@@ -49,17 +45,9 @@ Both open the same share dialog.
 | **Link expires after** | How long the link stays valid: **1 day**, **7 days**, **30 days**, or **1 year**. Defaults to 7 days. |
 | **No expiry** | Switch this on for a link that never expires. Use sparingly. |
 
-![Share modal with a custom name entered and the expiry dropdown open, showing the 1 day / 7 days / 30 days / 1 year options](./assets/placeholder.png)
-
-![Share modal with the "No expiry" switch turned on, showing the expiry dropdown disabled and "Never expires"](./assets/placeholder.png)
-
 Once created, the link is ready to copy and send:
 
-![Share modal after creating a link, showing the generated share URL with the Copy button and a "Link copied" confirmation](./assets/placeholder.png)
-
 The dialog also lists every **active link** already created for that asset or directory, with its view and download counts, its expiry date, and buttons to **Copy**, **Revoke**, **Delete**, or **Reauthorize**.
-
-![Share modal's Active links list, showing existing links with their view and download counts, expiry dates, and the Copy / Revoke / Delete / Reauthorize buttons](./assets/placeholder.png)
 
 > [!NOTE]
 > Creating a share needs the **Share** permission — `dam.asset.share` for assets, `dam.directory.share` for directories — plus access to the directory the target lives in.
@@ -70,11 +58,9 @@ The dialog also lists every **active link** already created for that asset or di
 
 **Asset shares** open a single-asset viewer with the same zoom/pan image viewer, custom video and audio players, and PDF renderer used inside DAM, plus a download button.
 
-![Public share page for a single asset, showing the image viewer and download button](./assets/placeholder.png)
+![Public share page for a single asset, showing the image viewer and download button](./assets/shared-links/public-share-single-asset.png)
 
 **Directory shares** open a gallery of everything in that directory, paginated 24 assets at a time with infinite scroll and a **Per page** control. Recipients can open any individual asset, or grab the lot with **Download all as ZIP**.
-
-![Public share page for a directory, showing the asset gallery grid and the "Download all as ZIP" button](./assets/placeholder.png)
 
 Every public page is branded *"Powered by Unopim DAM"* in the footer.
 
@@ -85,12 +71,6 @@ If the link is no longer usable, the recipient gets a clear page rather than an 
 | Past its expiry date | **Link expired** |
 | Manually revoked | **Link revoked** |
 | Token does not exist | **Link not found** |
-
-![Public share page showing the "Link expired" message](./assets/placeholder.png)
-
-![Public share page showing the "Link revoked" message](./assets/placeholder.png)
-
-![Public share page showing the "Link not found" message](./assets/placeholder.png)
 
 ### Rate limits
 
@@ -108,7 +88,7 @@ Public share endpoints are throttled per IP address to protect your server from 
 
 Go to **DAM → Shared Links** for a single view of every link ever created — active, expired, and revoked.
 
-![DAM > Shared Links datagrid listing shares with Type, Target, Status, Expiry, Views and Downloads columns](./assets/placeholder.png)
+![DAM > Shared Links datagrid listing shares with Type, Target, Status, Expiry, Views and Downloads columns](./assets/shared-links/shared-links-datagrid.png)
 
 ### Columns
 
@@ -134,12 +114,6 @@ The grid is sorted newest-first and shows 25 rows per page.
 | **Edit** | Change the custom name and the expiry date. | `dam.shares.revoke` |
 | **Revoke** | Switches the link off. The URL stops working immediately but the record is kept, so you keep the audit trail and the view/download counts. | `dam.shares.revoke` |
 | **Delete** | Permanently removes the share record. | `dam.shares.delete` |
-
-![Shared Links datagrid row with its action menu open, showing Copy link, Edit, Revoke and Delete](./assets/placeholder.png)
-
-![Edit share modal, changing the custom name and the expiry date of an existing link](./assets/placeholder.png)
-
-![Shared Links datagrid showing a revoked link with the Revoked status badge and the Reauthorize action available](./assets/placeholder.png)
 
 ### Revoke vs. Delete vs. Reauthorize
 

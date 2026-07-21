@@ -18,7 +18,8 @@
       { "text": "Previewing Assets", "link": "/dam/asset-preview" },
       { "text": "Image Editor", "link": "/dam/image-editor" },
       { "text": "Managing Tags", "link": "/dam/tags" },
-      { "text": "Explorer View", "link": "/dam/explorer" }
+      { "text": "Explorer View", "link": "/dam/explorer" },
+      { "text": "Background Operations", "link": "/dam/background-operations" }
     ]
   },
 
@@ -40,8 +41,9 @@
   },
 
   {
-    "text": "Export & Migration",
+    "text": "Import, Export & Migration",
     "items": [
+      { "text": "Importing Products & Categories with Assets", "link": "/dam/import-assets" },
       { "text": "Exporting Assets with Product & Categories", "link": "/dam/export-assets" },
       { "text": "DAM Asset Migration to AWS S3", "link": "/dam/dam-asset-migration-to-aws-s3" }
     ]
@@ -65,6 +67,13 @@
       { "text": "Tag", "link": "/dam/tag" },
       { "text": "Shares", "link": "/dam/shares" },
       { "text": "Linked Resources", "link": "/dam/linked-resources" }
+    ]
+  },
+
+  {
+    "text": "Developers",
+    "items": [
+      { "text": "Extending DAM", "link": "/dam/extending-dam" }
     ]
   },
 

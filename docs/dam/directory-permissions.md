@@ -12,15 +12,11 @@ Directory permissions live on the **role**, not on the user.
 
 1. Go to **Settings → Roles** and create or edit a role.
 
-![Settings > Roles list with the Create Role button](./assets/placeholder.png)
-
 2. Set the role's **Permission Type** to **Custom**.
-
-![Role edit form with the Permission Type set to Custom, revealing the Access Control tree](./assets/placeholder.png)
 
 3. Scroll past the Access Control card. A **DAM Directory Permissions** panel appears below it.
 
-![Settings > Roles edit page with the DAM Directory Permissions panel below the Access Control card](./assets/placeholder.png)
+![Settings > Roles edit page with the DAM Directory Permissions panel below the Access Control card](./assets/directory-permissions/roles-edit-dam-panel.png)
 
 > [!IMPORTANT]
 > The panel only appears for roles whose permission type is **Custom**. A role set to **All** has unrestricted access and bypasses directory permissions entirely — it can see and act on every directory. If a role must be scoped to certain folders, it cannot be an "All" role.
@@ -31,15 +27,11 @@ Directory permissions live on the **role**, not on the user.
 
 The panel — subtitled *"Directories this role can access"* — offers two checkboxes and a directory tree.
 
-![DAM Directory Permissions panel showing the All Directories checkbox, Inherit Sub-directories checkbox, and the directory tree with checkboxes](./assets/placeholder.png)
-
 ### All Directories
 
 > *All Directories — grant access to every directory now and in the future*
 
 Ticking this grants the role every directory, including any created later. The directory tree is hidden while it is on, because there is nothing left to choose.
-
-![DAM Directory Permissions panel with All Directories ticked and the directory tree hidden](./assets/placeholder.png)
 
 Use it for roles like a DAM administrator who should never be blocked by a folder boundary.
 
@@ -51,8 +43,6 @@ With this on, granting a directory automatically grants everything beneath it. G
 
 While it is enabled, the panel notes: *"Sub-directories will be included automatically on save."*
 
-![DAM Directory Permissions panel with Inherit Sub-directories ticked, showing the "Sub-directories will be included automatically on save" note](./assets/placeholder.png)
-
 With it **off**, each directory must be granted explicitly. Granting `Marketing` alone gives access to that folder only, not its children.
 
 > [!NOTE]
@@ -62,7 +52,7 @@ With it **off**, each directory must be granted explicitly. Granting `Marketing`
 
 Tick the individual directories this role should reach. The tree loads its children lazily as you expand nodes, so it stays fast even on very large libraries.
 
-![Directory tree inside the permissions panel with specific folders ticked and others left unticked](./assets/placeholder.png)
+![Directory tree inside the permissions panel with specific folders ticked and others left unticked](./assets/directory-permissions/directory-tree-picker.png)
 
 If nothing loads you will see *"Loading directories…"*, *"No directories found."*, or *"Failed to load directories. Please try again."* with a Retry button.
 
@@ -100,8 +90,6 @@ Directory permissions are not just a UI filter. They are enforced everywhere:
 
 Ancestor directories that a role can *see* but not *act on* are shown in the tree as **view-only** placeholders, so the folder path still makes sense without granting rights the role should not have.
 
-![DAM directory tree as seen by a restricted role, with the granted folder usable and an ancestor folder marked view-only](./assets/placeholder.png)
-
 If someone without permission tries to manage the panel itself, they get:
 
 > You are not allowed to manage DAM directory permissions.
@@ -120,11 +108,9 @@ Say you want the Marketing team to own their own folder and nothing else:
 6. Tick **Root / Marketing** only.
 7. Save.
 
-![The completed Marketing role configuration, with Custom permission type, inherit sub-directories on, and only Root / Marketing ticked](./assets/placeholder.png)
-
 The result: the Marketing role sees `Marketing` and everything inside it, can upload and share within it, has any new subfolder they create granted automatically — and cannot see `Legal`, `Finance`, or anything else in the library.
 
-![DAM media library as seen by a user on the Marketing role, showing only the Marketing folder tree](./assets/placeholder.png)
+![DAM media library as seen by a user on the Marketing role, showing only the Marketing folder tree](./assets/directory-permissions/restricted-library-view.png)
 
 ---
 

@@ -2,7 +2,7 @@
 
 DAM has a settings page at **DAM → Configuration** for changing how the media library behaves — without editing `.env` or redeploying.
 
-![DAM > Configuration page showing the General Settings card with its toggles](./assets/placeholder.png)
+![DAM > Configuration page showing the Interface Settings and Directory Settings cards with their toggles](./assets/configuration/configuration-page.png)
 
 Change what you need and click **Save**. You will see *"Configuration saved successfully."* The relevant caches are cleared for you automatically.
 
@@ -11,34 +11,49 @@ Change what you need and click **Save**. You will see *"Configuration saved succ
 
 ---
 
-## General Settings
+## Interface Settings
 
-*Configure directory tree visibility, explorer view, and bookmarks panel for the DAM media library.*
+*Configure the DAM interface and browsing experience.*
 
 | Setting | Default | What it does |
 |---|---|---|
-| **Show Assets in Directory Tree** | Off | When enabled, asset files appear as leaf nodes inside the directory tree, not just folders. |
-| **Enable Explorer View** | Off | Replaces the default asset grid with the multi-tab folder [Explorer](./explorer.md). |
-| **Enable Bookmarks Panel** | Off | Shows a bookmarks panel below the directory tree for quick navigation. *Only visible once Explorer is enabled.* |
-| **Show Directory Tree** | On | Shows the directory tree sidebar alongside the Explorer. *Only visible once Explorer is enabled.* |
+| **Enable Explore View** | Off | Replaces the default asset grid with the multi-tab folder [Explorer](./explorer.md). |
+| **Show Bookmark Panel** | Off | Shows a sidebar of bookmarked folders for quick access. *This row only appears once Explore View is on.* |
 
-The last two toggles stay hidden until Explorer is switched on:
+## Directory Settings
 
-![Configuration page with Enable Explorer View turned on, revealing the Enable Bookmarks Panel and Show Directory Tree toggles below it](./assets/placeholder.png)
+*Configure how folders and assets are displayed in the directory panel.*
 
-![Configuration page showing the "Configuration saved successfully" confirmation message after saving](./assets/placeholder.png)
+| Setting | Default | What it does |
+|---|---|---|
+| **Show Directory Tree** | On | Shows the folder hierarchy in the left sidebar. |
+| **Show Assets in Directory Tree** | Off | Assets appear as leaf nodes inside the tree, not just folders. *This row only appears while Show Directory Tree is on.* |
+
+---
+
+## How the Toggles Affect Each Other
+
+These four switches are interdependent, which is why some of them appear, disappear, or move on their own as you click. The rules are:
+
+| What you do | What happens automatically |
+|---|---|
+| Turn **Enable Explore View** on | **Show Bookmark Panel** appears and is switched **on** for you |
+| Turn **Enable Explore View** off | **Show Bookmark Panel** is hidden, and **Show Directory Tree** is forced on and locked |
+| Turn **Show Directory Tree** on | **Show Assets in Directory Tree** appears and is switched **on** for you |
+| Turn **Show Directory Tree** off | **Show Assets in Directory Tree** is hidden |
+
+> [!IMPORTANT]
+> **Show Directory Tree cannot be turned off while Explore View is off.** With no Explorer to browse in, the tree is the only way to navigate, so DAM forces it on, greys the toggle out, and shows the hint *"Always on while Explore View is disabled."* Turn Explore View on first if you want to hide the tree.
+
+Enabling a parent switches its child on as a convenience, not a constraint — you are free to switch the child back off afterwards and save.
+
+---
 
 ### Show Assets in Directory Tree
 
 Off by default, and that default is deliberate. With it on, the tree loads assets as well as folders, which is convenient on a small library and slow on a large one.
 
-![Directory tree with Show Assets turned off, listing folders only](./assets/placeholder.png)
-
-![Directory tree with Show Assets turned on, showing asset files as leaf nodes inside each folder](./assets/placeholder.png)
-
 When enabled, assets load **lazily** — DAM fetches directories in batches of **100** with a **Load more** control, and only pulls a directory's assets when you actually expand it. Even so, on libraries with tens of thousands of assets you will feel the difference. Leave it off unless you need it.
-
-![Directory tree showing the "Load more" control at the bottom of a folder with more than 100 items](./assets/placeholder.png)
 
 ---
 
@@ -49,8 +64,8 @@ The four settings above can also be set in `.env`. They map like this:
 | Env var | Setting | Default |
 |---|---|---|
 | `DAM_TREE_SHOW_ASSETS` | Show Assets in Directory Tree | `false` |
-| `DAM_EXPLORER_ENABLED` | Enable Explorer View | `false` |
-| `DAM_EXPLORER_BOOKMARKS_ENABLED` | Enable Bookmarks Panel | `false` |
+| `DAM_EXPLORER_ENABLED` | Enable Explore View | `false` |
+| `DAM_EXPLORER_BOOKMARKS_ENABLED` | Show Bookmark Panel | `false` |
 | `DAM_EXPLORER_SHOW_TREE` | Show Directory Tree | `true` |
 
 > [!IMPORTANT]
