@@ -30,41 +30,62 @@ Each asset in the response carries `id`, `file_name`, `file_type`, `file_size`, 
 
 ### Filtering
 
-Narrow the list with the `filters` parameter. Each filter takes an operator and a value:
+Narrow the list with the `filters` parameter. It is a **JSON string**, and every entry needs both an `operator` and a `value`:
 
 ```
-GET {{url}}/api/v1/rest/assets?filters[file_type][0][operator]==&filters[file_type][0][value]=image
+filters={"<field>":[{"operator":"=","value":"<value>"}]}
 ```
 
-| Filter | Supported operators | Example |
+```
+GET {{url}}/api/v1/rest/assets?filters={"file_type":[{"operator":"=","value":"image"}]}
+```
+
+> [!IMPORTANT]
+> `filters` must be valid JSON. Malformed JSON returns `400 filter query parameter should be valid JSON`, and an entry missing its `operator` returns `422`.
+
+| Filter | Matching | Example |
 |---|---|---|
-| `file_type` | `=` | `image`, `video`, `document`, `audio` |
-| `mime_type` | `=`, `LIKE` | `image/png` |
-| `extension` | `=`, `LIKE` | `pdf` |
-| `file_name` | `=`, `LIKE` | `hero-banner` |
-| `code` | `=`, `LIKE` | `summer_hero` |
+| `file_type` | Exact | `image`, `video`, `document`, `audio` |
+| `mime_type` | Always partial | `image/` matches every image type |
+| `extension` | Always partial | `pdf` |
+| `file_name` | Operator honoured — `=`, `LIKE` | `hero-banner` |
+| `code` | Always partial, against the **file name** | `hero` |
 | `file_size` | `=`, `<`, `>`, `<=`, `>=` | `1048576` (bytes) |
-| `created_at` | `=`, `>=`, `<=` | `2026-01-01` |
-| `updated_at` | `=`, `>=`, `<=` | `2026-07-01` |
+| `created_at` | Exact date, or a `from`/`to` range | `2026-01-01` |
+| `updated_at` | Exact date, or a `from`/`to` range | `2026-07-01` |
+
+> [!IMPORTANT]
+> `mime_type`, `extension` and `code` ignore whatever operator you send and always run a partial match. `code` is an alias that searches the **file name**, not a separate code column. For an exact file-name match use `file_name` with `=`.
 
 **Examples:**
 
 Every PNG image:
 ```
-GET {{url}}/api/v1/rest/assets?filters[extension][0][operator]==&filters[extension][0][value]=png
+GET {{url}}/api/v1/rest/assets?filters={"extension":[{"operator":"=","value":"png"}]}
 ```
 
 Assets larger than 5 MB:
 ```
-GET {{url}}/api/v1/rest/assets?filters[file_size][0][operator]=>&filters[file_size][0][value]=5242880
+GET {{url}}/api/v1/rest/assets?filters={"file_size":[{"operator":">","value":5242880}]}
 ```
 
-Assets created since the start of July 2026:
+Assets created on one specific date:
 ```
-GET {{url}}/api/v1/rest/assets?filters[created_at][0][operator]=>=&filters[created_at][0][value]=2026-07-01
+GET {{url}}/api/v1/rest/assets?filters={"created_at":[{"operator":"=","value":"2026-07-01"}]}
 ```
 
-Combine filters to narrow further — for example, videos updated in the last month.
+Assets created within a date range — add `from` and `to` alongside the operator:
+```
+GET {{url}}/api/v1/rest/assets?filters={"created_at":[{"operator":"=","from":"2026-07-01","to":"2026-07-31"}]}
+```
+
+Combine fields — every video larger than 5 MB:
+```
+GET {{url}}/api/v1/rest/assets?filters={"file_type":[{"operator":"=","value":"video"}],"file_size":[{"operator":">","value":5242880}]}
+```
+
+> [!NOTE]
+> Date filters match a **whole day**, not a moment. `>=` and `<=` are not applied to `created_at` or `updated_at` — use the `from`/`to` range above for an open or closed window.
 
 ---
 

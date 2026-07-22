@@ -26,6 +26,7 @@ Every endpoint that returns a share returns this shape:
 | `download_count` | How many times the file was downloaded |
 | `status` | `active`, `expired`, or `revoked` |
 | `created_at` | ISO 8601 timestamp |
+| `updated_at` | ISO 8601 timestamp. Returned by the list endpoint only. |
 
 ---
 
@@ -51,20 +52,36 @@ Authorization: Bearer {{token}}
 
 ### Filtering
 
-The same `filters` syntax used by the [assets endpoint](./assets.md#filtering) applies here:
+Two filters are supported, both with the `=` operator only:
 
-| Filter | Supported operators | Example |
+| Filter | Operator | Example |
 |---|---|---|
 | `share_type` | `=` | `asset`, `directory` |
 | `target_id` | `=` | `390` |
-| `name` | `=`, `LIKE` | `Campaign hero` |
-| `created_at` | `=`, `>=`, `<=` | `2026-01-01` |
-| `updated_at` | `=`, `>=`, `<=` | `2026-07-01` |
+
+The `filters` parameter is a **JSON string**. Every entry needs both an `operator` and a `value`:
+
+```
+filters={"<field>":[{"operator":"=","value":"<value>"}]}
+```
 
 **Example** — every directory share:
 ```
-GET {{url}}/api/v1/rest/shares?filters[share_type][0][operator]==&filters[share_type][0][value]=directory
+GET {{url}}/api/v1/rest/shares?filters={"share_type":[{"operator":"=","value":"directory"}]}
 ```
+
+**Example** — every share pointing at asset `390`:
+```
+GET {{url}}/api/v1/rest/shares?filters={"target_id":[{"operator":"=","value":390}]}
+```
+
+**Example** — combine both to find the share for one specific asset:
+```
+GET {{url}}/api/v1/rest/shares?filters={"share_type":[{"operator":"=","value":"asset"}],"target_id":[{"operator":"=","value":390}]}
+```
+
+> [!NOTE]
+> There is no date or status filtering on this endpoint. To find expired or revoked links, read the `status` field on each returned share.
 
 > [!NOTE]
 > Results are scoped to your [directory permissions](./directory-permissions.md): you only see shares whose target lives in a directory granted to your role. A role with no grants gets an empty list.
@@ -258,22 +275,6 @@ Authorization: Bearer {{token}}
 
 > [!WARNING]
 > This cannot be undone. Anyone holding that URL gets **Link not found**, forever.
-
----
-
-## Public Share URLs
-
-The `public_url` on every share is a normal web page, not an API endpoint — it takes **no bearer token** and is throttled per IP address:
-
-| URL | What it does | Rate limit |
-|---|---|---|
-| `/share/{token}` | The viewer page for the asset or directory | 120/min |
-| `/share/{token}/download` | Download the shared asset | 20/min |
-| `/share/{token}/assets` | List the assets in a shared directory | 120/min |
-| `/share/{token}/asset/{assetId}` | View one asset inside a shared directory | 120/min |
-| `/share/{token}/asset/{assetId}/download` | Download one asset from a shared directory | 20/min |
-| `/share/{token}/thumb/{assetId}` | Thumbnail for an asset in the gallery | 1,200/min |
-| `/share/{token}/download-zip` | Download the whole shared directory as a ZIP | 20/min |
 
 ---
 
