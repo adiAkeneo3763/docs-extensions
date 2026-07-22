@@ -50,7 +50,7 @@ Scroll down to the **Media Attribute Group** section. Here you'll find the **Add
 
 The asset picker shows all the assets you've uploaded across your directories. You can:
 
-![Asset Picker](./assets/product-asset/asset-picker.png)
+![Asset Picker](./assets/product-asset/asset-picker-new.png)
 
 - Click **All** to select every available asset
 - Click individual assets to select them one by one

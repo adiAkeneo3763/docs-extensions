@@ -36,6 +36,10 @@ This is the reliable way to get the paths right: **export first, then edit that 
 
 An export writes each asset column as the exact comma-separated paths that an import expects, so a file exported from one UnoPim instance can be imported into another without reformatting.
 
+![Exported CSV opened in a spreadsheet, showing an asset column filled with storage paths](./assets/import-assets/exported-csv-asset-file.png)
+
+Check the comma separated assets file path after export.
+
 ![Exported CSV opened in a spreadsheet, showing an asset column filled with storage paths](./assets/import-assets/exported-csv-asset-paths.png)
 
 1. Run an export of the products or categories you want to change — see [Exporting Assets](./export-assets.md)
