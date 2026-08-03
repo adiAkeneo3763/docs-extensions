@@ -96,10 +96,10 @@ features:
     details: Custom PDF templates with dynamic fields.
     link: /pdf-generator/
     linkText: Read docs
-  # - title: PrestaShop
-  #   details: Link PrestaShop stores with Unopim (coming soon).
-  #   link: /prestashop/
-  #   linkText: Read docs
+  - title: PrestaShop
+    details: Link PrestaShop stores with Unopim (coming soon).
+    link: /prestashop/
+    linkText: Read docs
   - title: Public Image URL
     details: Link product media via public URLs.
     link: /public-image-url/
