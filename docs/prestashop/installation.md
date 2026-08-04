@@ -31,7 +31,7 @@ Unzip the extension package and merge the `packages` folder into your project ro
 
 ```
 /your-unopim-project
-└── packages/
+└── packages/webkul
 ```
 
 ---

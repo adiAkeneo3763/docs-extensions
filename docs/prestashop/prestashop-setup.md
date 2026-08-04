@@ -11,14 +11,28 @@ The connector communicates with PrestaShop through its built-in WebService (REST
 ### Enable the WebService
 
 1. Log in to your PrestaShop back office.
+
+![PrestaShop Back Office](./assets/prestashop-setup/login-prestashop.png)
+
 2. Go to **Advanced Parameters → Webservice**.
-3. Set **Enable PrestaShop's webservice** to **Yes**.
-4. Save the configuration.
+
+![PrestaShop Webservice Settings](./assets/prestashop-setup/webservices.png)
+
+3. Set **Enable PrestaShop's webservice** to **Yes** and save the configuration.
+
+![PrestaShop Enable Webservice](./assets/prestashop-setup/save.png)
+
 
 ### Create an API Key
 
 1. On the same Webservice page, click **Add new webservice key**.
+
+![PrestaShop Add New Webservice Key](./assets/prestashop-setup/add-api.png)
+
 2. Click **Generate** to create a random key, or enter your own.
+
+![PrestaShop Generate API Key](./assets/prestashop-setup/generate.png)
+
 3. Under **Permissions**, enable the following resources and grant at least the permissions listed:
 
 | Resource | GET | POST | PUT | DELETE |
@@ -36,6 +50,8 @@ The connector communicates with PrestaShop through its built-in WebService (REST
 | `currencies` | ✓ | | | |
 | `stock_availables` | ✓ | ✓ | ✓ | |
 | `tax_rules` | ✓ | | | |
+
+![PrestaShop API Key Permissions](./assets/prestashop-setup/permissions.png)
 
 4. Set **Status** to **Enabled**.
 5. Save the key and copy the generated API key — you will need it in UnoPim.

@@ -12,8 +12,7 @@
     "items": [
       { "text": "Setup Credentials", "link": "/prestashop/setup-credentials" },
       { "text": "Shop & Channel Mapping", "link": "/prestashop/shop-channel-mapping" },
-      { "text": "Export Attribute Mapping", "link": "/prestashop/attribute-mapping" },
-      { "text": "Import Attribute Mapping", "link": "/prestashop/import-attribute-mapping" }
+      { "text": "Attribute & Other Mapping", "link": "/prestashop/attribute-mapping" }
     ]
   },
   {
@@ -22,7 +21,8 @@
       { "text": "Category Export", "link": "/prestashop/category-export" },
       { "text": "Attribute Export", "link": "/prestashop/attribute-export" },
       { "text": "Simple Product Export", "link": "/prestashop/simple-product-export" },
-      { "text": "Configurable Product Export", "link": "/prestashop/configurable-product-export" }
+      { "text": "Configurable Product Export", "link": "/prestashop/configurable-product-export" },
+      { "text": "Product Variant Export", "link": "/prestashop/product-variant-export" }
     ]
   },
   {
@@ -31,7 +31,8 @@
       { "text": "Attribute Import", "link": "/prestashop/attribute-import" },
       { "text": "Category Import", "link": "/prestashop/category-import" },
       { "text": "Simple Product Import", "link": "/prestashop/simple-product-import" },
-      { "text": "Configurable Product Import", "link": "/prestashop/configurable-product-import" }
+      { "text": "Configurable Product Import", "link": "/prestashop/configurable-product-import" },
+      { "text": "Product Variant Import", "link": "/prestashop/product-variant-import" }
     ]
   },
   {

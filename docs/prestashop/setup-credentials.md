@@ -6,6 +6,8 @@
 
 Navigate to **Prestashop → Credentials** in the left sidebar.
 
+![PrestaShop Credentials](./assets/setup-credential/credentials.png)
+
 ### Create a Credential
 
 Click **Create Credential**. A modal opens with two fields:
@@ -17,11 +19,15 @@ Click **Create Credential**. A modal opens with two fields:
 
 UnoPim tests the connection immediately on save. If the URL or key is incorrect, or the API key lacks `GET` permission on the `shops` resource, the form returns an error. On success the credential is saved with **Status: Enabled** and you are redirected to the edit page.
 
+![PrestaShop Create Credential](./assets/setup-credential/create-credentials.png)
+
 ### Edit a Credential
 
 The edit page has two sections:
 
 **General Settings** — Update the Webservice Account Key or toggle the credential status. The host URL cannot be changed after creation. If you leave the key field showing the masked value (30 asterisks), the existing key is kept.
+
+![PrestaShop Edit Credential](./assets/setup-credential/edit-cred.png)
 
 **Prestashop Multishops and Channels Mapping** — Maps each PrestaShop shop to a UnoPim channel. UnoPim fetches the shop list from your PrestaShop instance via the API. For each shop, configure:
 
