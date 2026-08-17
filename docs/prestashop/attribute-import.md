@@ -7,7 +7,15 @@ The attribute import job pulls attributes from PrestaShop into UnoPim. It import
 ## How to Run
 
 1. Go to **Data Transfer → Imports → Create Import Job**.
+
+!["Data Transfer"](./assets/import/data-transfer-import.png)
+
+!["Create Import Job"](./assets/import/create%20import.png)
+
 2. Select importer type **Prestashop Attributes**.
+
+!["Prestashop Attributes"](./assets/import/attribute-import.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -17,6 +25,8 @@ The attribute import job pulls attributes from PrestaShop into UnoPim. It import
 | **Locales** | Which languages to import |
 
 4. Save and run the job.
+
+!["Job Log"](./assets/import/save-run-attribute.png)
 
 ---
 

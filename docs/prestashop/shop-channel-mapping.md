@@ -23,7 +23,7 @@ PrestaShop can run multiple shops from one installation. UnoPim organizes produc
 4. For each shop, select a channel, currency, default locale, and map each language to a UnoPim locale.
 5. Click **Save**.
 
-![PrestaShop Shop Mapping](./assets/setup-credential/shop-and-channel.png)
+![PrestaShop Shop Mapping](./assets/setup-credential/shop-mapping.png)
 
 ---
 

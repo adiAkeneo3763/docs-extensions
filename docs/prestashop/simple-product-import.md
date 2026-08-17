@@ -7,7 +7,15 @@ The simple product import job pulls simple (non-variant) products from PrestaSho
 ## How to Run
 
 1. Go to **Data Transfer → Imports → Create Import Job**.
+
+!["Data Transfer"](./assets/import/data-transfer-import.png)
+!["Create Import Job"](./assets/import/create%20import.png)
+
+
 2. Select importer type **Prestashop Simple Products**.
+
+!["Prestashop Simple Products"](./assets/import/import-simple-product.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -18,6 +26,8 @@ The simple product import job pulls simple (non-variant) products from PrestaSho
 | **Default Attribute Family** | The family to assign to imported products |
 
 4. Save and run the job.
+
+!["Job Log"](./assets/import/save-run-simple-product.png)
 
 ---
 

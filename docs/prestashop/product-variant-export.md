@@ -21,7 +21,16 @@ Both jobs work with configurable products (products that have variants), but the
 ## How to Run
 
 1. Go to **Data Transfer → Exports → Create Export Job**.
+
+!["Data Transfer"](./assets/export/data-trasnfer.png)
+
+!["Create Export Job"](./assets/export/create-export.png)
+
+
 2. Select exporter type **Prestashop Product Variants**.
+
+!["Prestashop Product Variants"](./assets/export/export-product-variant.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -31,6 +40,8 @@ Both jobs work with configurable products (products that have variants), but the
 | **Locales** | Which languages to include |
 
 4. Save and run the job.
+
+!["save and run"](./assets/export/save-run-configurable.png)
 
 ---
 

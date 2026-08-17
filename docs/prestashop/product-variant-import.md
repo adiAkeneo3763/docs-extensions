@@ -7,7 +7,15 @@ The product variant import job pulls combinations (variants) from PrestaShop int
 ## How to Run
 
 1. Go to **Data Transfer → Imports → Create Import Job**.
+
+!["Data Transfer"](./assets/import/data-transfer-import.png)
+
+!["Create Import Job"](./assets/import/create%20import.png)
+
 2. Select importer type **Prestashop Product Variants**.
+
+!["Prestashop Product Variants"](./assets/import/import-product-variant.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -18,6 +26,8 @@ The product variant import job pulls combinations (variants) from PrestaShop int
 | **Default Attribute Family** | The family to assign to imported products |
 
 4. Save and run the job.
+
+!["Job Log"](./assets/import/save-run-variants.png)
 
 ---
 

@@ -26,8 +26,6 @@ The attribute export job pushes UnoPim attributes to PrestaShop. Depending on ho
 
 4. Save and run the job.
 
-!["save and run"](./assets/export/save-attribute-export.png)
-
 !["Job Log"](./assets/export/attribute-export-log.png)
 
 ---

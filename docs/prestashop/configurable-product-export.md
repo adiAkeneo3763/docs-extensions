@@ -7,7 +7,16 @@ The configurable product export job pushes UnoPim configurable products (product
 ## How to Run
 
 1. Go to **Data Transfer → Exports → Create Export Job**.
+
+!["Data Transfer"](./assets/export/data-trasnfer.png)
+
+!["Create Export Job"](./assets/export/create-export.png)
+
+
 2. Select exporter type **Prestashop Configurable Products**.
+
+!["Prestashop Configurable Products"](./assets/export/export-configurable.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -17,6 +26,8 @@ The configurable product export job pushes UnoPim configurable products (product
 | **Locales** | Which languages to include |
 
 4. Save and run the job.
+
+!["save and run"](./assets/export/save-configurable-export.png)
 
 ---
 

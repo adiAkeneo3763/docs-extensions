@@ -7,7 +7,15 @@ The category import job pulls categories from PrestaShop into UnoPim, preserving
 ## How to Run
 
 1. Go to **Data Transfer → Imports → Create Import Job**.
+
+!["Data Transfer"](./assets/import/data-transfer-import.png)
+
+!["Create Import Job"](./assets/import/create%20import.png)
+
 2. Select importer type **Prestashop Categories**.
+
+!["Prestashop Categories"](./assets/import/category-import.png)
+
 3. Set the filters:
 
 | Filter | What to pick |
@@ -17,6 +25,8 @@ The category import job pulls categories from PrestaShop into UnoPim, preserving
 | **Locales** | Which languages to import |
 
 4. Save and run the job.
+
+!["Job Log"](./assets/import/save-run-category.png)
 
 ---
 

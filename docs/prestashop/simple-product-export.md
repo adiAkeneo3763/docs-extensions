@@ -27,7 +27,6 @@ The simple product export job pushes UnoPim simple products (non-variant, no par
 
 4. Save and run the job.
 
-!["save and run"](./assets/export/save-simple-product.png)
 
 !["Job Log"](./assets/export/simple-product-job.png)
 

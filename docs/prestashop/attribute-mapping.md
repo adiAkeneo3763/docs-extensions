@@ -8,6 +8,8 @@ Attribute mapping tells the connector which UnoPim attribute should fill which P
 
 Go to **Prestashop → Attribute Mapping** in the sidebar.
 
+![PrestaShop Attribute Mapping](./assets/setup-credential/attribute-mapping-nav.png)
+
 The page has two tabs:
 
 | Tab | What you configure |
