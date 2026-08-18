@@ -12,11 +12,11 @@ To create an attribute export job, go to:
 
 `Data Transfer > Exports`
 
-![Exports Navigation](assets/jobs/Data-trnsfer.png)
+![Exports Navigation](assets/exports/data-trasnfer.png)
 
 From the Exports page, click **Create Export** in the top-right corner.
 
-![Create Export Job](assets/jobs/create-export.png)
+![Create Export Job](assets/exports/create-export.png)
 
 ## Step 2 — Create an Attribute Export Job
 
@@ -25,7 +25,7 @@ While creating the export job, the user needs to:
 - Enter the **Export Job Code**.
 - Search for and select **WooCommerce Attributes** as the export job type.
 
-![Attribute Export Job](assets/jobs/wpml-attribute-export.png)
+![Attribute Export Job](assets/exports/attribute-export.png)
 
 ## Step 3 — Configure Attribute Export Filters
 
@@ -38,7 +38,6 @@ After selecting the job type, configure the following fields:
 | Locale | Multiselect | Yes | One or more UnoPim locales to export. Each selected locale is exported as a separate WPML language translation of the attribute. The default locale defined in the credential's WPML Settings is treated as the base (original) attribute. |
 | Attributes | Multiselect | No | Limit the export to specific UnoPim attributes. Leave empty to export all attributes available in the selected channel. |
 
-![Attribute Export Filters](assets/jobs/wpml-attribute-fields.png)
 
 ::: warning
 Make sure each locale you select has a corresponding WPML language configured in WordPress. Exporting to a locale with no matching WPML language will fail.
@@ -50,6 +49,6 @@ After filling in the required fields, click **Save Export** to save the job.
 
 To run the job, open it from the Exports list and click **Run**. You can monitor progress from the **Job Tracker**.
 
-![Job Tracker](assets/jobs/wpml-attribute-complete.png)
+![Job Tracker](assets/exports/save-run-attribute.png)
 
 After the export completes successfully, the selected attributes and their WPML translations will be available in the connected WooCommerce store under **Products → Attributes**, with each language entry linked through WPML.

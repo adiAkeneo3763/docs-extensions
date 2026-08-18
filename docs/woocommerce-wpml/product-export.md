@@ -12,11 +12,11 @@ To create a product export job, go to:
 
 `Data Transfer > Exports`
 
-![Exports Navigation](assets/jobs/Data-trnsfer.png)
+![Exports Navigation](assets/exports/data-trasnfer.png)
 
 From the Exports page, click **Create Export** in the top-right corner.
 
-![Create Export Job](assets/jobs/create-export.png)
+![Create Export Job](assets/exports/create-export.png)
 
 ## Step 2 — Create a Product Export Job
 
@@ -25,7 +25,7 @@ While creating the export job, the user needs to:
 - Enter the **Export Job Code**.
 - Search for and select **WooCommerce Product** as the export job type.
 
-![Product Export Job](assets/jobs/wpml-product-export.png)
+![Product Export Job](assets/exports/product-export.png)
 
 ## Step 3 — Configure Product Export Filters
 
@@ -40,7 +40,6 @@ After selecting the job type, configure the following fields:
 | Product SKU | Multiselect | No | Limit the export to specific products by their UnoPim SKU. Leave empty to export all products in the selected channel. |
 | With Media | Boolean | No | Enable this option if product images should also be exported to WooCommerce alongside the product data. |
 
-![Product Export Filters](assets/jobs/wpml-product-fields.png)
 
 ::: warning
 Make sure each locale you select has a corresponding WPML language configured in WordPress. Exporting to a locale with no matching WPML language will fail.
@@ -58,6 +57,6 @@ After filling in the required fields, click **Save Export** to save the job.
 
 To run the job, open it from the Exports list and click **Run**. You can monitor progress from the **Job Tracker**.
 
-![Job Tracker](assets/jobs/wpml-product-complete.png)
+<!-- ![Job Tracker](assets/exports/save-run-product.png) -->
 
 After the export completes successfully, the products and their WPML translations will be visible in the connected WooCommerce store. Each product will show its translated versions in the WPML translation panel on the product edit screen.

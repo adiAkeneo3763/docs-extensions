@@ -12,11 +12,11 @@ To create a product import job, go to:
 
 `Data Transfer > Imports`
 
-![Import Navigation](assets/jobs/data-transfer-import.png)
+![Import Navigation](assets/import/data-transfer-import.png)
 
 From there, click **Create Import** to open the import setup form.
 
-![Create Import Job](assets/jobs/create-import.png)
+![Create Import Job](assets/import/create%20import.png)
 
 ## Step 2 — Create a Product Import Job
 
@@ -25,7 +25,7 @@ While creating the import job, the user needs to:
 - Enter the **Code**.
 - Search for and select **WooCommerce Product Import** as the import type.
 
-![Product Import Job](assets/jobs/wpml-product-import.png)
+![Product Import Job](assets/import/product-import.png)
 
 ## Step 3 — Configure Product Import Settings
 
@@ -40,7 +40,6 @@ Under **Settings**, configure the following fields:
 | Family | Select | Yes | The UnoPim product family to assign to all imported products. |
 | With Media | Boolean | No | Enable this option if product images should also be imported from WooCommerce. |
 
-![Product Import Settings](assets/jobs/wpml-product-import-fields.png)
 
 ## Step 4 — Save and Run the Import Job
 
@@ -48,4 +47,4 @@ After entering the required values, click **Save Import** to save the import pro
 
 To run the job, open it from the Imports list and click **Run**. Once the job executes, the imported products will be available in UnoPim with each selected locale populated across the specified channel.
 
-![Product Import Complete](assets/jobs/wpml-product-import-complete.png)
+![Product Import Complete](assets/import/save-run-product.png)

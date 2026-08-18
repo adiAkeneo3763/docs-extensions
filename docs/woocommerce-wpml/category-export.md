@@ -12,11 +12,11 @@ To create a category export job, go to:
 
 `Data Transfer > Exports`
 
-![Exports Navigation](assets/jobs/Data-trnsfer.png)
+![Exports Navigation](assets/exports/data-trasnfer.png)
 
 From the Exports page, click **Create Export** in the top-right corner.
 
-![Create Export Job](assets/jobs/create-export.png)
+![Create Export Job](assets/exports/create-export.png)
 
 ## Step 2 — Create a Category Export Job
 
@@ -25,7 +25,7 @@ While creating the export job, the user needs to:
 - Enter the **Export Job Code**.
 - Search for and select **WooCommerce Categories** as the export job type.
 
-![Category Export Job](assets/jobs/wpml-category-export.png)
+![Category Export Job](assets/exports/category-export.png)
 
 ## Step 3 — Configure Category Export Filters
 
@@ -37,7 +37,6 @@ After selecting the job type, configure the following fields:
 | Channel | Select | Yes | The UnoPim channel to use for the export. The available options depend on the locales selected. |
 | Locale | Multiselect | Yes | One or more UnoPim locales to export. Each selected locale is exported as a separate WPML language translation of the category. The default locale defined in the credential's WPML Settings is treated as the base (original) category. |
 
-![Category Export Filters](assets/jobs/wpml-category-fields.png)
 
 ::: warning
 Make sure each locale you select has a corresponding WPML language configured in WordPress. Exporting to a locale with no matching WPML language will fail.
@@ -49,6 +48,6 @@ After filling in the required fields, click **Save Export** to save the job.
 
 To run the job, open it from the Exports list and click **Run**. You can monitor progress from the **Job Tracker**.
 
-![Job Tracker](assets/jobs/wpml-category-complete.png)
+![Job Tracker](assets/exports/save-run-category.png)
 
 After the export completes successfully, the categories and their WPML translations will be visible in the connected WooCommerce store under **Products → Categories**, with each language entry linked through WPML.
