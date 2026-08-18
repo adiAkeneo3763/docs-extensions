@@ -45,6 +45,7 @@ const projects = [
   { slug: 'supplier-data-portal', label: 'Supplier Data Portal' },
   { slug: 'woocommerce', label: 'WooCommerce' },
   // { slug: 'xml-connector', label: 'XML Connector' },
+  { slug: 'zapier', label: 'Zapier' },
 ] as const
 
 export default defineConfig({
