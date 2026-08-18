@@ -20,10 +20,10 @@ hero:
       link: https://store.webkul.com/unopim.html
 
 features:
-  # - title: AI Product Feed (OpenAI)
-  #   details: AI product feed for ChatGPT / OpenAI Search.
-  #   link: /ai-product-feed-openai/
-  #   linkText: Read docs
+  - title: AI Product Feed (OpenAI)
+    details: AI product feed for ChatGPT / OpenAI Search.
+    link: /ai-product-feed-openai/
+    linkText: Read docs
   - title: Akeneo Migration
     details: Migrate catalog data from Akeneo into UnoPim.
     link: /akeneo-migration/
