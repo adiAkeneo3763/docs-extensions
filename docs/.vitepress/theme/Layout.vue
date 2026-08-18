@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount } from 'vue'
+import { onMounted, onBeforeUnmount, computed } from 'vue'
 import DefaultTheme from 'vitepress/theme'
+import { useRoute } from 'vitepress'
 import GoogleTranslate from './components/GoogleTranslate.vue'
 import AutoImageZoom from './components/AutoImageZoom.vue'
 import PromoBar from './components/PromoBar.vue'
+import ExtensionsMegaMenu from './components/ExtensionsMegaMenu.vue'
+import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue'
 
 const { Layout } = DefaultTheme
+const route = useRoute()
+const isHome = computed(() => route.path === '/')
 
 let observer: MutationObserver | null = null
 
@@ -38,8 +43,54 @@ onBeforeUnmount(() => {
     <template #layout-top>
       <PromoBar />
     </template>
+
+    <!-- Mobile overlay: flat extensions list + external nav links -->
+    <template #nav-screen-content-before>
+      <div class="mobile-ext-section">
+        <p class="mobile-ext-heading">Extensions</p>
+        <nav class="mobile-ext-links">
+          <a href="/akeneo-migration/">Akeneo Migration</a>
+          <a href="/ai-product-feed-openai/">AI Product Feed</a>
+          <a href="/auto-sku-generator/">Auto SKU Generator</a>
+          <a href="/aws-integration/">AWS Integration</a>
+          <a href="/bagisto/">Bagisto</a>
+          <a href="/bigcommerce/">BigCommerce</a>
+          <a href="/azure-integration/">Azure Integration</a>
+          <a href="/cloudflare-r2-integration/">Cloudflare R2</a>
+          <a href="/cs-cart/">CS-Cart</a>
+          <a href="/dam/">DAM</a>
+          <a href="/deepl/">DeepL Translator</a>
+          <a href="/erpnext/">ERPNext</a>
+          <a href="/google-shopping/">Google Shopping</a>
+          <a href="/job-scheduler/">Job Scheduler</a>
+          <a href="/maker-checker-workflow/">Maker Checker</a>
+          <a href="/magento2/">Magento 2</a>
+          <a href="/odoo-erp/">Odoo ERP</a>
+          <a href="/pdf-generator/">PDF Generator</a>
+          <a href="/prestashop/">PrestaShop</a>
+          <a href="/public-image-url/">Public Image URL</a>
+          <a href="/shopify/">Shopify</a>
+          <a href="/supplier-data-portal/">Supplier Portal</a>
+          <a href="/woocommerce/">WooCommerce</a>
+          <a href="/woocommerce-wpml/">WooCommerce WPML</a>
+        </nav>
+        <div class="mobile-nav-links">
+          <a href="https://docs.unopim.com/" target="_blank" rel="noopener noreferrer">User Guide</a>
+          <a href="https://devdocs.unopim.com/" target="_blank" rel="noopener noreferrer">Dev Doc</a>
+          <a href="https://unopim.com/en/contacts/" target="_blank" rel="noopener noreferrer">Contact Us</a>
+        </div>
+      </div>
+    </template>
+
+    <!-- Desktop: all nav links right of the search bar -->
     <template #nav-bar-content-after>
+      <a href="/" class="vp-nav-link" :class="{ active: isHome }">Home</a>
+      <ExtensionsMegaMenu />
+      <a href="https://docs.unopim.com/" class="vp-nav-link" target="_blank" rel="noopener noreferrer">User Guide</a>
+      <a href="https://devdocs.unopim.com/" class="vp-nav-link" target="_blank" rel="noopener noreferrer">Dev Doc</a>
+      <a href="https://unopim.com/en/contacts/" class="vp-nav-link" target="_blank" rel="noopener noreferrer">Contact Us</a>
       <div class="vp-nav-icons">
+        <VPSwitchAppearance class="vp-nav-appearance" />
         <a
           class="vp-nav-icon vp-nav-icon--github"
           href="https://github.com/unopim"
@@ -62,6 +113,94 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/* ── Nav links (Home, User Guide, Dev Doc, Contact Us) ── */
+.vp-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  height: var(--vp-nav-height);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s;
+}
+
+.vp-nav-link:hover,
+.vp-nav-link.active {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+}
+
+/* ── Mobile extensions section ─────────────────────── */
+.mobile-ext-section {
+  padding: 12px 24px 4px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 8px;
+}
+
+.mobile-ext-heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-3);
+  margin: 0 0 8px;
+}
+
+.mobile-ext-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.mobile-ext-links a {
+  display: block;
+  padding: 7px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mobile-ext-links a:hover {
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-brand);
+}
+
+/* ── Mobile external nav links ─────────────────────── */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0 4px;
+}
+
+.mobile-nav-links a {
+  display: block;
+  padding: 7px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mobile-nav-links a:hover {
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-brand);
+}
+
+/* Hide VitePress built-in appearance toggle (we render it manually) */
+:deep(.VPNavBarAppearance) {
+  display: none !important;
+}
+
+/* ── Nav icons ─────────────────────────────────────── */
 .vp-nav-icons {
   display: inline-flex;
   align-items: center;
@@ -102,5 +241,10 @@ onBeforeUnmount(() => {
 .vp-nav-icon :deep(img),
 .vp-nav-icon :deep(svg) {
   display: block;
+}
+
+.vp-nav-appearance {
+  display: inline-flex;
+  align-items: center;
 }
 </style>
