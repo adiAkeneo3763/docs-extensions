@@ -371,10 +371,24 @@ iframe.skiptranslate,
   width: 0 !important;
 }
 
-html,
-body {
+/* Prevent Google Translate from shifting the page down for its toolbar */
+html {
   top: 0 !important;
-  min-height: 0 !important;
+  position: static !important;
+}
+
+html.translated-ltr,
+html.translated-rtl {
+  margin-top: 0 !important;
+  top: 0 !important;
+  position: static !important;
+}
+
+html.translated-ltr body,
+html.translated-rtl body {
+  top: 0 !important;
+  margin-top: 0 !important;
+  position: static !important;
 }
 
 .goog-text-highlight {

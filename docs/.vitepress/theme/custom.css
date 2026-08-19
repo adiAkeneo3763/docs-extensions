@@ -260,6 +260,31 @@
   color: #fff; /* White text on hover */
 }
 
+/* ── Mobile drawer ───────────────────────────────────────────────────────── */
+
+/* Remove the narrow default max-width / large side padding so content fills the drawer */
+.VPNavScreen .container {
+  max-width: 100% !important;
+  padding: 0 24px !important;
+  margin: 0 !important;
+}
+
+/* Flatten VitePress's gray-box Appearance card to match our plain row style */
+.VPNavScreen .VPNavScreenAppearance {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 12px 0 11px !important;
+  border-top: 1px solid var(--vp-c-divider) !important;
+  margin: 0 !important;
+}
+
+.VPNavScreen .VPNavScreenAppearance .text {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: var(--vp-c-text-1) !important;
+  line-height: 1.25 !important;
+}
+
 /* Dark mode - palette inspired by unopim.com */
 .dark {
   --vp-c-bg: #1a1d23;

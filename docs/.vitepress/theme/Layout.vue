@@ -330,4 +330,11 @@ onBeforeUnmount(() => {
 @media (max-width: 767px) {
   .desktop-nav { display: none; }
 }
+
+/* Very narrow screens: extensions list in a single column */
+@media (max-width: 450px) {
+  .mobile-menu-ext-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

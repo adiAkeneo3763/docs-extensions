@@ -219,7 +219,7 @@ function toggle() { open.value = !open.value }
 .nim-row--translate :deep(.vp-gt-trigger) {
   width: 100%;
   height: auto;
-  padding: 6px 8px;
+  padding: 8px 10px;
   border-radius: 6px;
   font-size: 13.5px;
   font-weight: 500;
