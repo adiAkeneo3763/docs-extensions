@@ -26,6 +26,7 @@
         <path fill="currentColor"
           d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
       </svg>
+      <span class="vp-gt-label">Translate</span>
     </button>
 
     <Transition name="vp-gt-fade">
@@ -72,6 +73,7 @@ const languages = [
 const open = ref(false)
 const current = ref<string>('en')
 let scriptLoaded = false
+let openedByHover = false
 
 function readCookie(name: string): string | null {
   if (typeof document === 'undefined') return null
@@ -156,12 +158,20 @@ function switchTo(lang: string) {
 }
 
 function toggle() {
+  if (open.value && openedByHover) {
+    // Menu was opened by hover — clicking the trigger should keep it open
+    // so the user can select a language without the menu closing on them.
+    openedByHover = false
+    return
+  }
   open.value = !open.value
+  openedByHover = false
   if (open.value) loadGoogleTranslate()
 }
 
 function close() {
   open.value = false
+  openedByHover = false
 }
 
 // Hover support — opens immediately on mouseenter, closes after a short
@@ -173,6 +183,7 @@ function onHoverOpen() {
   if (closeTimer) { clearTimeout(closeTimer); closeTimer = null }
   if (!open.value) {
     open.value = true
+    openedByHover = true
     loadGoogleTranslate()
   }
 }
@@ -181,6 +192,7 @@ function onHoverClose() {
   if (closeTimer) clearTimeout(closeTimer)
   closeTimer = setTimeout(() => {
     open.value = false
+    openedByHover = false
     closeTimer = null
   }, 180)
 }
@@ -213,10 +225,9 @@ onBeforeUnmount(() => {
 .vp-gt-trigger {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 2rem;
+  gap: 5px;
   height: 2rem;
-  padding: 0.25rem;
+  padding: 0.25rem 0rem;
   border: none;
   border-radius: 9999px;
   background-color: transparent;
@@ -225,6 +236,12 @@ onBeforeUnmount(() => {
   font-family: inherit;
   font-size: 1rem;
   transition: background-color 0.25s;
+}
+
+.vp-gt-label {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .vp-gt-trigger:hover,

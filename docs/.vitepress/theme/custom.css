@@ -63,14 +63,13 @@
   }
 }
 
-/* Reorder flex items so layout is:
-   Search | nav links | "..." (VPNavBarExtra) | icons | hamburger
-   Applies at all widths ≥768px (desktop + tablet). */
-@media (min-width: 768px) {
-  .VPNavBarExtra {
-    order: 2;
-  }
+/* NavIconsMore replaces VPNavBarExtra — hide VitePress's built-in "..." flyout. */
+.VPNavBarExtra {
+  display: none !important;
+}
 
+/* Keep hamburger after our slot content at ≥768px. */
+@media (min-width: 768px) {
   .VPNavBarHamburger {
     order: 4;
   }
