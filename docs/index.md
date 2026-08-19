@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Browse extensions
-      link: /auto-sku-generator/
+      link: /ai-product-feed-openai/
     - theme: alt
       text: GitHub
       link: https://github.com/unopim/docs-extensions
@@ -20,10 +20,10 @@ hero:
       link: https://store.webkul.com/unopim.html
 
 features:
-  # - title: AI Product Feed (OpenAI)
-  #   details: AI product feed for ChatGPT / OpenAI Search.
-  #   link: /ai-product-feed-openai/
-  #   linkText: Read docs
+  - title: AI Product Feed (OpenAI)
+    details: AI product feed for ChatGPT / OpenAI Search.
+    link: /ai-product-feed-openai/
+    linkText: Read docs
   - title: Akeneo Migration
     details: Migrate catalog data from Akeneo into UnoPim.
     link: /akeneo-migration/
@@ -128,4 +128,8 @@ features:
   #   details: Streamlined XML imports with validation and mapping.
   #   link: /xml-connector/
   #   linkText: Read docs
+  - title: WPML Integration
+    details: Connect Unopim with WPML for multilingual product catalogs.
+    link: /woocommerce-wpml/
+    linkText: Read docs
 ---
