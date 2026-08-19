@@ -63,6 +63,34 @@
   }
 }
 
+/* Reorder flex items so layout is:
+   Search | nav links | "..." (VPNavBarExtra) | icons | hamburger
+   Applies at all widths ≥768px (desktop + tablet). */
+@media (min-width: 768px) {
+  .VPNavBarExtra {
+    order: 2;
+  }
+
+  .VPNavBarHamburger {
+    order: 4;
+  }
+}
+
+/* Below 1280px: hide standalone appearance toggle — it lives inside "..." flyout instead.
+   At ≥1280px: VitePress shows VPNavBarAppearance natively (the proper toggle switch). */
+@media (max-width: 1279px) {
+  .VPNavBarAppearance {
+    display: none !important;
+  }
+}
+
+/* At ≥1280px: place the appearance toggle after our nav links (order:1) and before icons (order:3). */
+@media (min-width: 1280px) {
+  .VPNavBarAppearance {
+    order: 2;
+  }
+}
+
 /* Logo Styling */
 .logo {
   width: 100px !important;

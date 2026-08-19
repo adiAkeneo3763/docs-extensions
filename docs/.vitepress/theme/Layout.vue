@@ -6,12 +6,38 @@ import GoogleTranslate from './components/GoogleTranslate.vue'
 import AutoImageZoom from './components/AutoImageZoom.vue'
 import PromoBar from './components/PromoBar.vue'
 import ExtensionsMegaMenu from './components/ExtensionsMegaMenu.vue'
-import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue'
 
 const { Layout } = DefaultTheme
 const route = useRoute()
 const isHome = computed(() => route.path === '/')
 const mobileExtOpen = ref(false)
+
+const extensions = [
+  { slug: 'akeneo-migration',          label: 'Akeneo Migration'   },
+  { slug: 'ai-product-feed-openai',    label: 'AI Product Feed'    },
+  { slug: 'auto-sku-generator',        label: 'Auto SKU Generator' },
+  { slug: 'aws-integration',           label: 'AWS Integration'    },
+  { slug: 'bagisto',                   label: 'Bagisto'            },
+  { slug: 'bigcommerce',               label: 'BigCommerce'        },
+  { slug: 'azure-integration',         label: 'Azure Integration'  },
+  { slug: 'cloudflare-r2-integration', label: 'Cloudflare R2'      },
+  { slug: 'cs-cart',                   label: 'CS-Cart'            },
+  { slug: 'dam',                       label: 'DAM'                },
+  { slug: 'deepl',                     label: 'DeepL Translator'   },
+  { slug: 'erpnext',                   label: 'ERPNext'            },
+  { slug: 'google-shopping',           label: 'Google Shopping'    },
+  { slug: 'job-scheduler',             label: 'Job Scheduler'      },
+  { slug: 'maker-checker-workflow',    label: 'Maker Checker'      },
+  { slug: 'magento2',                  label: 'Magento 2'          },
+  { slug: 'odoo-erp',                  label: 'Odoo ERP'           },
+  { slug: 'pdf-generator',             label: 'PDF Generator'      },
+  { slug: 'prestashop',                label: 'PrestaShop'         },
+  { slug: 'public-image-url',          label: 'Public Image URL'   },
+  { slug: 'shopify',                   label: 'Shopify'            },
+  { slug: 'supplier-data-portal',      label: 'Supplier Portal'    },
+  { slug: 'woocommerce',               label: 'WooCommerce'        },
+  { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML'   },
+]
 
 let observer: MutationObserver | null = null
 
@@ -62,30 +88,21 @@ onBeforeUnmount(() => {
             <span class="mobile-menu-plus" :class="{ open: mobileExtOpen }">+</span>
           </button>
           <div v-if="mobileExtOpen" class="mobile-menu-ext-grid">
-            <a href="/akeneo-migration/">Akeneo Migration</a>
-            <a href="/ai-product-feed-openai/">AI Product Feed</a>
-            <a href="/auto-sku-generator/">Auto SKU Generator</a>
-            <a href="/aws-integration/">AWS Integration</a>
-            <a href="/bagisto/">Bagisto</a>
-            <a href="/bigcommerce/">BigCommerce</a>
-            <a href="/azure-integration/">Azure Integration</a>
-            <a href="/cloudflare-r2-integration/">Cloudflare R2</a>
-            <a href="/cs-cart/">CS-Cart</a>
-            <a href="/dam/">DAM</a>
-            <a href="/deepl/">DeepL Translator</a>
-            <a href="/erpnext/">ERPNext</a>
-            <a href="/google-shopping/">Google Shopping</a>
-            <a href="/job-scheduler/">Job Scheduler</a>
-            <a href="/maker-checker-workflow/">Maker Checker</a>
-            <a href="/magento2/">Magento 2</a>
-            <a href="/odoo-erp/">Odoo ERP</a>
-            <a href="/pdf-generator/">PDF Generator</a>
-            <a href="/prestashop/">PrestaShop</a>
-            <a href="/public-image-url/">Public Image URL</a>
-            <a href="/shopify/">Shopify</a>
-            <a href="/supplier-data-portal/">Supplier Portal</a>
-            <a href="/woocommerce/">WooCommerce</a>
-            <a href="/woocommerce-wpml/">WooCommerce WPML</a>
+            <a
+              v-for="ext in extensions"
+              :key="ext.slug"
+              :href="`/${ext.slug}/`"
+              class="mobile-ext-item"
+            >
+              <img
+                :src="`/icons/extensions/${ext.slug}.png`"
+                :alt="ext.label"
+                class="mobile-ext-item-icon"
+                width="22"
+                height="22"
+              />
+              <span class="mobile-ext-item-name">{{ ext.label }}</span>
+            </a>
           </div>
         </div>
 
@@ -121,7 +138,6 @@ onBeforeUnmount(() => {
         <a href="https://unopim.com/en/contacts/" class="vp-nav-link" target="_blank" rel="noopener noreferrer">Contact Us</a>
       </div>
       <div class="vp-nav-icons">
-        <VPSwitchAppearance class="vp-nav-appearance" />
         <a
           class="vp-nav-icon vp-nav-icon--github"
           href="https://github.com/unopim"
@@ -173,7 +189,7 @@ onBeforeUnmount(() => {
 
 /* ── Mobile menu ─────────────────────────────────────── */
 .mobile-menu {
-  padding: 0 24px;
+  padding: 0 2px;
   margin-bottom: 8px;
 }
 
@@ -238,15 +254,36 @@ onBeforeUnmount(() => {
 /* Extensions 2-column grid inside accordion */
 .mobile-menu-ext-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2px;
+  max-height: 260px;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding-bottom: 12px;
+  /* custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
 }
 
-.mobile-menu-ext-grid a {
-  display: block;
+.mobile-menu-ext-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-ext-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-menu-ext-grid::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 4px;
+}
+
+.mobile-ext-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 7px 8px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--vp-c-text-1);
   text-decoration: none;
@@ -254,20 +291,31 @@ onBeforeUnmount(() => {
   transition: background 0.15s, color 0.15s;
 }
 
-.mobile-menu-ext-grid a:hover {
+.mobile-ext-item:hover {
   background: var(--vp-c-default-soft);
   color: var(--vp-c-brand);
+}
+
+.mobile-ext-item-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.mobile-ext-item-name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.3;
 }
 
 /* External link icon */
 .mobile-ext-icon {
   flex-shrink: 0;
   opacity: 0.55;
-}
-
-/* Hide VitePress built-in nav bar appearance toggle (we render our own on desktop) */
-:deep(.VPNavBarAppearance) {
-  display: none !important;
 }
 
 /* ── Nav icons ───────────────────────────────────────── */
@@ -313,24 +361,33 @@ onBeforeUnmount(() => {
   display: block;
 }
 
-.vp-nav-appearance {
-  display: inline-flex;
-  align-items: center;
+/* ── Responsive ──────────────────────────────────────── */
+
+/* All widths ≥768px: fix flex order so "..." sits after our nav links.
+   DOM order puts VPNavBarExtra before our slot, so we use CSS order to correct it.
+   Flex order: search(0) | desktop-nav(1) | VPNavBarExtra "..."(2) | vp-nav-icons(3) | hamburger(4) */
+@media (min-width: 768px) {
+  .desktop-nav {
+    order: 1;
+  }
+
+  .vp-nav-icons {
+    order: 3;
+  }
 }
 
-/* ── Responsive ──────────────────────────────────────── */
-@media (max-width: 959px) {
-  /* Hide desktop-only nav block */
-  .desktop-nav {
-    display: none;
+/* Tablet (768px – 959px): tighter spacing to fit everything */
+@media (min-width: 768px) and (max-width: 959px) {
+  .vp-nav-link {
+    padding: 0 7px;
+    font-size: 13px;
   }
 
-  /* Hide our custom appearance toggle — mobile drawer has VitePress's built-in one */
-  .vp-nav-appearance {
-    display: none;
+  :deep(.ext-trigger) {
+    padding: 0 7px;
+    font-size: 13px;
   }
 
-  /* Compact icon row on tablet/mobile */
   .vp-nav-icons {
     gap: 0.25rem;
     padding-left: 0.25rem;
@@ -339,6 +396,36 @@ onBeforeUnmount(() => {
   .vp-nav-icon {
     width: 1.75rem;
     height: 1.75rem;
+  }
+}
+
+/* Narrow tablet (768px – 860px): hide icon group to prevent overflow */
+@media (min-width: 768px) and (max-width: 860px) {
+  .vp-nav-icons {
+    display: none;
+  }
+}
+
+/* Mobile (< 768px): hide desktop nav entirely, use hamburger drawer */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .vp-nav-icons {
+    gap: 0.25rem;
+    padding-left: 0.25rem;
+  }
+
+  .vp-nav-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp-nav-icon::before {
+    display: none;
   }
 }
 
