@@ -147,13 +147,11 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-/* ── Desktop nav wrapper ─────────────────────────────── */
 .desktop-nav {
   display: inline-flex;
   align-items: center;
 }
 
-/* ── Desktop nav links ───────────────────────────────── */
 .vp-nav-link {
   display: inline-flex;
   align-items: center;
@@ -173,13 +171,11 @@ onBeforeUnmount(() => {
   text-decoration: none;
 }
 
-/* ── Mobile menu ─────────────────────────────────────── */
 .mobile-menu {
   padding: 0 2px;
   margin-bottom: 8px;
 }
 
-/* Each row item */
 .mobile-menu-link {
   display: flex;
   align-items: center;
@@ -198,7 +194,6 @@ onBeforeUnmount(() => {
   color: var(--vp-c-brand);
 }
 
-/* Extensions accordion wrapper */
 .mobile-menu-group {
   border-top: 1px solid var(--vp-c-divider);
 }
@@ -237,7 +232,6 @@ onBeforeUnmount(() => {
   transform: rotate(45deg);
 }
 
-/* Extensions 2-column grid inside accordion */
 .mobile-menu-ext-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -246,7 +240,6 @@ onBeforeUnmount(() => {
   overflow-x: hidden;
   overflow-y: auto;
   padding-bottom: 12px;
-  /* custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--vp-c-divider) transparent;
 }
@@ -298,22 +291,16 @@ onBeforeUnmount(() => {
   line-height: 1.3;
 }
 
-/* External link icon */
 .mobile-ext-icon {
   flex-shrink: 0;
   opacity: 0.55;
 }
 
-/* ── Responsive ──────────────────────────────────────── */
-
-/* ≥768px: fix flex order — desktop-nav(1) | NavIconsMore(2) | hamburger(3)
-   VPNavBarExtra is hidden via custom.css; VPNavBarAppearance at ≥1280px gets order:2 there */
 @media (min-width: 768px) {
   .desktop-nav    { order: 1; }
   .nav-slot-more  { order: 2; }
 }
 
-/* Tablet (768px – 959px): tighter spacing to fit nav links */
 @media (min-width: 768px) and (max-width: 959px) {
   .vp-nav-link {
     padding: 0 7px;
@@ -326,12 +313,10 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Mobile (< 768px): hide desktop nav, use hamburger drawer */
 @media (max-width: 767px) {
   .desktop-nav { display: none; }
 }
 
-/* Very narrow screens: extensions list in a single column */
 @media (max-width: 450px) {
   .mobile-menu-ext-grid {
     grid-template-columns: 1fr;

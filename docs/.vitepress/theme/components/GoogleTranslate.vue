@@ -214,14 +214,12 @@ onBeforeUnmount(() => {
     Google Translate custom styles
     ======================================== */
 
-/** Container for the translate button and menu flyout */
 .vp-gt {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/** Translate trigger button */
 .vp-gt-trigger {
   display: inline-flex;
   align-items: center;
@@ -256,7 +254,6 @@ onBeforeUnmount(() => {
   outline-offset: 2px;
 }
 
-/** Menu (flyout) container */
 .vp-gt-menu {
   position: absolute;
   top: calc(100% + 0.25rem);
@@ -272,7 +269,6 @@ onBeforeUnmount(() => {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
-/** Menu items (language buttons) */
 .vp-gt-menu-item {
   display: flex;
   align-items: center;
@@ -300,7 +296,6 @@ onBeforeUnmount(() => {
   font-weight: 500;
 }
 
-/** Flag emoji in menu item */
 .vp-gt-menu-flag {
   display: inline-block;
   width: 1rem;
@@ -310,12 +305,10 @@ onBeforeUnmount(() => {
   line-height: 1;
 }
 
-/** Language label in menu item */
 .vp-gt-menu-label {
   flex: 1;
 }
 
-/** Checkmark (active indicator) in menu item */
 .vp-gt-menu-check {
   display: inline-block;
   margin-left: 0.5rem;
@@ -323,12 +316,10 @@ onBeforeUnmount(() => {
   font-weight: bold;
 }
 
-/** Hidden host for Google Translate widget (we hide it visually) */
 .vp-gt-hidden-host {
   display: none;
 }
 
-/** Transition animations */
 .vp-gt-fade-enter-active,
 .vp-gt-fade-leave-active {
   transition: all 0.2s ease;
@@ -340,19 +331,16 @@ onBeforeUnmount(() => {
   transform: translateY(-0.5rem);
 }
 
-/** Utility to prevent Google Translate from translating */
 .notranslate {
   --disable-google-translate: true;
 }
 
-/* Directive for v-click-outside - close on outside click */
 [v-click-outside] {
-  /* no additional styles needed */
+ 
 }
 </style>
 
 <style>
-/* Global styles to hide Google Translate's native UI */
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
 .goog-te-gadget-simple,
@@ -371,7 +359,6 @@ iframe.skiptranslate,
   width: 0 !important;
 }
 
-/* Prevent Google Translate from shifting the page down for its toolbar */
 html {
   top: 0 !important;
   position: static !important;
@@ -396,7 +383,6 @@ html.translated-rtl body {
   box-shadow: none !important;
 }
 
-/* Hide the dropdown menu when it appears */
 .goog-te-menu-frame {
   display: none !important;
 }

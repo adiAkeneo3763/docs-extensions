@@ -144,7 +144,6 @@ const extensions = [
 </template>
 
 <style scoped>
-/* ── Trigger ──────────────────────────────────── */
 .ext-wrap {
   display: inline-flex;
   align-items: center;
@@ -180,16 +179,13 @@ const extensions = [
 }
 .ext-caret.up { transform: rotate(180deg); }
 
-/* ── Backdrop ─────────────────────────────────── */
 .ext-backdrop {
   position: fixed;
   inset: 0;
   z-index: 9998;
 }
 
-/* ── Panel ────────────────────────────────────── */
 .ext-panel {
-  /* position/top/left/width come from :style binding */
   max-height: calc(100vh - var(--vp-nav-height) - 40px);
   overflow-y: auto;
   background: var(--vp-c-bg-elv);
@@ -208,7 +204,6 @@ const extensions = [
   margin: 0 0 12px 4px;
 }
 
-/* ── Grid — 6 cols so 24 items = 4 rows ────────── */
 .ext-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -233,7 +228,6 @@ const extensions = [
   text-decoration: none !important;
 }
 
-/* Icon image */
 .ext-icon {
   flex-shrink: 0;
   width: 40px;
@@ -255,13 +249,11 @@ const extensions = [
   word-break: break-word;
 }
 
-/* Scrollbar */
 .ext-panel::-webkit-scrollbar { width: 5px; }
 .ext-panel::-webkit-scrollbar-track { background: transparent; }
 .ext-panel::-webkit-scrollbar-thumb { background: var(--vp-c-divider); border-radius: 3px; }
 .ext-panel::-webkit-scrollbar-thumb:hover { background: var(--vp-c-text-3); }
 
-/* Transition */
 .fade-panel-enter-active,
 .fade-panel-leave-active {
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -272,7 +264,6 @@ const extensions = [
   transform: translateY(-6px);
 }
 
-/* Narrower screens */
 @media (max-width: 900px) {
   .ext-grid { grid-template-columns: repeat(4, 1fr); }
 }

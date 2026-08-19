@@ -102,7 +102,6 @@ function toggle() { open.value = !open.value }
   flex-shrink: 0;
 }
 
-/* ── Icon bar ────────────────────────────────────── */
 .nim-icons {
   display: inline-flex;
   align-items: center;
@@ -130,7 +129,6 @@ function toggle() { open.value = !open.value }
   color: var(--vp-c-brand);
 }
 
-/* ── Flyout button ───────────────────────────────── */
 .nim-flyout-wrap {
   display: none;
   position: relative;
@@ -156,7 +154,6 @@ function toggle() { open.value = !open.value }
   color: var(--vp-c-brand);
 }
 
-/* ── Flyout panel ────────────────────────────────── */
 .nim-panel {
   position: absolute;
   top: calc(100% - 4px);
@@ -211,7 +208,6 @@ function toggle() { open.value = !open.value }
   border-radius: 0 0 6px 6px;
 }
 
-/* Make translate trigger fill the row and use row-level hover instead of pill hover */
 .nim-row--translate :deep(.vp-gt) {
   width: 100%;
 }
@@ -233,7 +229,6 @@ function toggle() { open.value = !open.value }
   color: var(--vp-c-brand);
 }
 
-/* ── Transitions ─────────────────────────────────── */
 .nim-fade-enter-active,
 .nim-fade-leave-active {
   transition: opacity 0.15s ease, transform 0.15s ease;
@@ -244,10 +239,8 @@ function toggle() { open.value = !open.value }
   transform: translateY(-6px);
 }
 
-/* Hide "Translate" text in the icon bar — only show it inside the flyout panel */
 .nim-icons :deep(.vp-gt-label) { display: none; }
 
-/* Force square shape on the translate trigger in the icon bar so hover is circular */
 .nim-icons :deep(.vp-gt-trigger) {
   width: 2rem;
   height: 2rem;
@@ -255,20 +248,16 @@ function toggle() { open.value = !open.value }
   justify-content: center;
 }
 
-/* ── Responsive ──────────────────────────────────── */
 
-/* 768–860px: show flyout, hide icon bar */
 @media (min-width: 768px) and (max-width: 860px) {
   .nim-flyout-wrap { display: inline-flex; }
   .nim-icons       { display: none; }
 }
 
-/* Mobile (<768px): icon bar shown but hide appearance (hamburger menu has it) */
 @media (max-width: 767px) {
   .nim-icon-appearance { display: none !important; }
 }
 
-/* ≥1280px: VPNavBarAppearance shows natively — hide ours */
 @media (min-width: 1280px) {
   .nim-icon-appearance { display: none !important; }
 }
