@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Browse extensions
-      link: /auto-sku-generator/
+      link: /ai-product-feed-openai/
     - theme: alt
       text: GitHub
       link: https://github.com/unopim/docs-extensions
