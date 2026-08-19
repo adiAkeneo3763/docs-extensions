@@ -143,11 +143,20 @@ function switchTo(lang: string) {
   // Keep the cookie in sync so a page reload (or other components reading
   // it) see the current target language.
   if (lang === 'en') {
-    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
+    const expired = 'expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
     const host = location.hostname
-    if (host.indexOf('.') >= 0) {
-      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.${host}`
+    // Build every domain variant GT might have used and clear them all.
+    const domains: string[] = ['', host, `.${host}`]
+    const parts = host.split('.')
+    if (parts.length > 2) {
+      const parent = parts.slice(-2).join('.')
+      domains.push(parent, `.${parent}`)
     }
+    for (const d of domains) {
+      const domainPart = d ? `; domain=${d}` : ''
+      document.cookie = `googtrans=; ${expired}${domainPart}`
+    }
+    try { localStorage.removeItem('googtrans') } catch (_) {}
   } else {
     writeCookie('googtrans', '/auto/' + lang)
   }
