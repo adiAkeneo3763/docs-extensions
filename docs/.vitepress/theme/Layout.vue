@@ -180,7 +180,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0 11px;
+  padding: 12px 06px 11px 06px;
   border-top: 1px solid var(--vp-c-divider);
   font-size: 15px;
   font-weight: 500;
@@ -203,7 +203,7 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 12px 0 11px;
+  padding: 12px 06px 11px 06px;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.25;

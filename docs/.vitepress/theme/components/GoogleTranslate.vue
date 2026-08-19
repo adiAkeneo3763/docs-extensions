@@ -91,10 +91,12 @@ function writeCookie(name: string, value: string) {
 }
 
 function detectCurrent() {
-  // Format is `/auto/<lang>` once GT has translated.
+  // We write /auto/<lang>; GT may rewrite to /<src>/<lang> after translating.
+  // The target language is always the last path segment.
   const c = readCookie('googtrans') || ''
-  const m = c.match(/^\/auto\/([a-z]{2})$/i)
-  current.value = m ? m[1] : 'en'
+  const m = c.match(/\/([a-z]{2,8})$/i)
+  const lang = m ? m[1].toLowerCase() : 'en'
+  current.value = lang === 'auto' ? 'en' : lang
 }
 
 function loadGoogleTranslate() {

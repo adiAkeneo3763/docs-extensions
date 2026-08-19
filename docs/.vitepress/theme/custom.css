@@ -240,14 +240,14 @@
 
 .VPNavScreen .container {
   max-width: 100% !important;
-  padding: 0 24px !important;
+  padding: 0 12px !important;
   margin: 0 !important;
 }
 
 .VPNavScreen .VPNavScreenAppearance {
   background: transparent !important;
   border-radius: 0 !important;
-  padding: 12px 0 11px !important;
+  padding: 12px 06px 11px 06px !important;
   border-top: 1px solid var(--vp-c-divider) !important;
   margin: 0 !important;
 }
@@ -275,4 +275,8 @@
   --vp-c-brand: #a78bfa;
   --vp-c-brand-light: #c4b5fd;
   --vp-c-brand-dark: #8b5cf6;
+}
+
+#VPNavScreen {
+  padding: 0 12px !important;
 }
