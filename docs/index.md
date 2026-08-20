@@ -72,10 +72,6 @@ features:
     details: Export product data from UnoPim to Google Shopping and Merchant Center.
     link: /google-shopping/
     linkText: Read docs
-  # - title: Icecat
-  #   details: Connect PIM with the Icecat catalog.
-  #   link: /icecat/
-  #   linkText: Read docs
   - title: Job Scheduler
     details: Automate import and export tasks.
     link: /job-scheduler/
@@ -112,10 +108,6 @@ features:
     details: Sync product data between Unopim and Shopware 6.
     link: /shopware6/
     linkText: Read docs
-  # - title: Starter Pack
-  #   details: Bundled starter pack for Unopim PIM.
-  #   link: /starter-pack/
-  #   linkText: Read docs
   - title: Supplier Data Portal
     details: Manage supplier product data.
     link: /supplier-data-portal/
@@ -123,6 +115,10 @@ features:
   - title: WooCommerce
     details: Export and import product data with WooCommerce stores.
     link: /woocommerce/
+    linkText: Read docs
+  - title: Zapier
+    details: Trigger workflows in thousands of apps the moment a product, category, attribute or family changes.
+    link: /zapier/
     linkText: Read docs
   - title: XML Connector
     details: Streamlined XML imports with validation and mapping.

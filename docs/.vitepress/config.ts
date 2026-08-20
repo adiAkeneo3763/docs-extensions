@@ -27,11 +27,9 @@ const projects = [
   { slug: 'cloudflare-r2-integration', label: 'Cloudflare R2 Integration' },
   { slug: 'cs-cart', label: 'CS-Cart' },
   { slug: 'dam', label: 'DAM' },
-  // { slug: 'dam-webdav', label: 'DAM NextCloud' },
   { slug: 'deepl', label: 'DeepL Translator' },
   { slug: 'erpnext', label: 'ERPNext' },
   { slug: 'google-shopping', label: 'Google Shopping' },
-  // { slug: 'icecat', label: 'Icecat' },
   { slug: 'job-scheduler', label: 'Job Scheduler' },
   { slug: 'maker-checker-workflow', label: 'Maker Checker Workflow' },
   { slug: 'magento2', label: 'Magento 2' },
@@ -41,11 +39,11 @@ const projects = [
   { slug: 'public-image-url', label: 'Public Image URL' },
   { slug: 'shopify', label: 'Shopify' },
   { slug: 'shopware6', label: 'Shopware 6' },
-  // { slug: 'starter-pack', label: 'Starter Pack' },
   { slug: 'supplier-data-portal', label: 'Supplier Data Portal' },
   { slug: 'woocommerce', label: 'WooCommerce' },
   { slug: 'xml-connector', label: 'XML Connector' },
   { slug: 'woocommerce-wpml', label: 'WooCommerce WPML' },
+  { slug: 'zapier', label: 'Zapier' },
 ] as const
 
 export default defineConfig({
@@ -62,7 +60,7 @@ export default defineConfig({
       light: '/logo.svg',
       dark: '/dark_logo.svg',
     },
-    // All nav links are rendered via #nav-bar-content-after slot in Layout.vue
+    
     sidebar: Object.fromEntries(
       projects.map(p => [`/${p.slug}/`, loadSidebar(p.slug)])
     ),
