@@ -76,24 +76,6 @@ php artisan queue:work
 
 ---
 
-## Step 5 (Optional) — Configure Tests
-
-If you run the UnoPim test suite, add the following to wire up Shopware connector tests.
-
-**In `tests/Pest.php`:**
-```php
-use Webkul\Shopware\Tests\ShopwareTestCase;
-
-uses(ShopwareTestCase::class)->in('../packages/Webkul/Shopware/tests');
-```
-
-**In `composer.json` under `autoload-dev > psr-4`:**
-```json
-"Webkul\\Shopware\\Tests\\": "packages/Webkul/Shopware/tests"
-```
-
----
-
 ## Verify the Installation
 
 Log in to your UnoPim dashboard. You should see a **Shopware** option appear in the left sidebar — this confirms the connector is installed and ready to configure.
