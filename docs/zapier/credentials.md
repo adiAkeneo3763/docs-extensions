@@ -53,9 +53,9 @@ Note that the UnoPim labels and the Zapier labels differ: Zapier's *Client Secre
 >
 > The **Username** field takes the generated **API Username** from the API Keys screen - a value shaped `integration+<uuid>@api.local`. It is **not** the email address you sign into the UnoPim admin with.
 >
-> This is the single biggest support trap with this connector, because a human admin login **appears to work**. UnoPim's `/oauth/token` accepts it and hands back a valid token, so Zapier reports the connection as successful. Then every subsequent request fails with **403 This action is unauthorized** - the API scope middleware requires the authenticated user to have an API key attached to it, and a human admin does not.
+> This is the single biggest support trap with this connector. UnoPim ties each key's OAuth client to the generated API user on the same row, so a username that does not resolve to that client is rejected at the token step: `/oauth/token` answers **`invalid_client`**, no token is issued, and the connection never completes. Zapier shows *"Those credentials were rejected"*.
 >
-> The symptom is a connection that tests green and a Zap that can do nothing. Copy all four credential values from **the same row** of the API Keys screen and the problem disappears.
+> The same error appears if the Username is clipped when copying - the value is 58 characters long. Copy all four credential values from **the same row** of the API Keys screen and the problem disappears.
 
 > [!WARNING]
 > ### The URL must be `https://`

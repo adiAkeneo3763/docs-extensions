@@ -47,15 +47,15 @@ php artisan tinker --execute='dump(\Webkul\Zapier\Models\ZapierSubscription::plu
 
 ---
 
-## The connection tests fine but everything returns 403
+## Zapier rejects the credentials
 
-You used a **human admin login** in the Username field.
+You most likely used a **human admin login** in the Username field, or copied the four values from different rows.
 
-UnoPim's `/oauth/token` accepts an admin's own email and password and returns a valid token, so Zapier reports the connection as successful. Every subsequent request then fails with **403 This action is unauthorized**, because the API scope middleware requires the authenticated user to have an API key attached - and a human admin does not.
+UnoPim ties each API key's OAuth client to the generated API user on that same row. When the Username does not resolve to that client, `/oauth/token` answers **`invalid_client`** and no token is issued, so the connection never completes. A Username that was clipped when copying fails the same way - the value is 58 characters long.
 
 **Fix:** open **Configuration → Integrations**, and copy the **API Username** (`integration+<uuid>@api.local`), **API Password**, **Client ID** and **Secret Key** from *the same row*. Paste all four into the Zapier connection. See [Connect UnoPim in Zapier](./credentials).
 
-If the Username is right and you still get 403 on one specific operation, the API key is missing a permission for that route. Grant it on the key, or set its **Permission Type** to *All*.
+If the connection succeeds but one operation returns **403 This action is unauthorized**, the API key is missing a permission for that route. Grant it on the key, or set its **Permission Type** to *All*.
 
 ---
 
