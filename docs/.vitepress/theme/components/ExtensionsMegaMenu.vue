@@ -75,6 +75,7 @@ const extensions = [
   { slug: 'supplier-data-portal',      label: 'Supplier Portal',  icon: '/icons/extensions/supplier-data-portal.png' },
   { slug: 'woocommerce',               label: 'WooCommerce',      icon: '/icons/extensions/woocommerce.png' },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML', icon: '/icons/extensions/woocommerce-wpml.png' },
+  { slug: 'xml-connector',             label: 'XML Connector',    icon: '/icons/extensions/xml-connector.svg' },
 ]
 </script>
 

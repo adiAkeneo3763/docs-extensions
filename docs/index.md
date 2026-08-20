@@ -124,10 +124,10 @@ features:
     details: Export and import product data with WooCommerce stores.
     link: /woocommerce/
     linkText: Read docs
-  # - title: XML Connector
-  #   details: Streamlined XML imports with validation and mapping.
-  #   link: /xml-connector/
-  #   linkText: Read docs
+  - title: XML Connector
+    details: Streamlined XML imports with validation and mapping.
+    link: /xml-connector/
+    linkText: Read docs
   - title: WPML Integration
     details: Connect Unopim with WPML for multilingual product catalogs.
     link: /woocommerce-wpml/
