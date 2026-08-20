@@ -108,10 +108,10 @@ features:
     details: Sync products, attributes, and inventory between Unopim and Shopify.
     link: /shopify/
     linkText: Read docs
-  # - title: Shopware 6
-  #   details: Sync product data between Unopim and Shopware 6.
-  #   link: /shopware6/
-  #   linkText: Read docs
+  - title: Shopware 6
+    details: Sync product data between Unopim and Shopware 6.
+    link: /shopware6/
+    linkText: Read docs
   # - title: Starter Pack
   #   details: Bundled starter pack for Unopim PIM.
   #   link: /starter-pack/

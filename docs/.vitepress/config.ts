@@ -40,7 +40,7 @@ const projects = [
   { slug: 'prestashop', label: 'PrestaShop' },
   { slug: 'public-image-url', label: 'Public Image URL' },
   { slug: 'shopify', label: 'Shopify' },
-  // { slug: 'shopware6', label: 'Shopware 6' },
+  { slug: 'shopware6', label: 'Shopware 6' },
   // { slug: 'starter-pack', label: 'Starter Pack' },
   { slug: 'supplier-data-portal', label: 'Supplier Data Portal' },
   { slug: 'woocommerce', label: 'WooCommerce' },
