@@ -18,7 +18,7 @@ function loadSidebar(project: string): DefaultTheme.SidebarItem[] {
 
 const projects = [
   { slug: 'akeneo-migration', label: 'Akeneo Migration' },
-  // { slug: 'ai-product-feed-openai', label: 'AI Product Feed (OpenAI)' },
+  { slug: 'ai-product-feed-openai', label: 'AI Product Feed (OpenAI)' },
   { slug: 'auto-sku-generator', label: 'Auto SKU Generator' },
   { slug: 'aws-integration', label: 'AWS Integration' },
   { slug: 'bagisto', label: 'Bagisto' },
@@ -44,6 +44,7 @@ const projects = [
   // { slug: 'starter-pack', label: 'Starter Pack' },
   { slug: 'supplier-data-portal', label: 'Supplier Data Portal' },
   { slug: 'woocommerce', label: 'WooCommerce' },
+  { slug: 'woocommerce-wpml', label: 'WooCommerce WPML' },
   // { slug: 'xml-connector', label: 'XML Connector' },
   { slug: 'zapier', label: 'Zapier' },
 ] as const
@@ -62,16 +63,7 @@ export default defineConfig({
       light: '/logo.svg',
       dark: '/dark_logo.svg',
     },
-    nav: [
-      { text: 'Home', link: '/' },
-      {
-        text: 'Extensions',
-        items: projects.map(p => ({ text: p.label, link: `/${p.slug}/` })),
-      },
-      { text: 'User Guide', link: 'https://docs.unopim.com/' },
-      {text: 'Dev Doc', link: 'https://devdocs.unopim.com/'}, 
-      { text: 'Contact Us', link: 'https://unopim.com/en/contacts/' },
-    ],
+    // All nav links are rendered via #nav-bar-content-after slot in Layout.vue
     sidebar: Object.fromEntries(
       projects.map(p => [`/${p.slug}/`, loadSidebar(p.slug)])
     ),
