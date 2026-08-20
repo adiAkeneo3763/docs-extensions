@@ -86,6 +86,11 @@ values.channel_locale_specific.default.en_US.price  ->  price__default__en_US
 
 The key order is always **`attribute__channel__locale`**.
 
+> [!NOTE]
+> The **Test trigger** step in the Zap editor returns the identity fields only - `id`, `entity`, `reference`, `event` and the timestamps. Attribute values are left out there because a sample record and the record a live event carries rarely hold the same attributes, and Zapier rejects a sample that offers fields a real delivery may not have.
+>
+> A live delivery carries the full flattened set. To map an attribute the test step did not list, type the key by hand in the field - for example `description__en_US` - or run the Zap once and map from the real run.
+
 Values that are one level deeper than the mapper can address - price maps, metric objects - arrive JSON-encoded as a string. Plain lists are joined with `, ` so option codes stay readable in the Zap editor.
 
 ### A product payload
