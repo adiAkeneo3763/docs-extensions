@@ -34,9 +34,11 @@ const extensions = [
   { slug: 'prestashop',                label: 'PrestaShop'         },
   { slug: 'public-image-url',          label: 'Public Image URL'   },
   { slug: 'shopify',                   label: 'Shopify'            },
+  { slug: 'shopware6',                 label: 'Shopware 6'         },
   { slug: 'supplier-data-portal',      label: 'Supplier Portal'    },
   { slug: 'woocommerce',               label: 'WooCommerce'        },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML'   },
+  { slug: 'xml-connector',             label: 'XML Connector'      },
 ]
 
 let observer: MutationObserver | null = null

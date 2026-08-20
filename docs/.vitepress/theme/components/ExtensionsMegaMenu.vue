@@ -71,9 +71,11 @@ const extensions = [
   { slug: 'prestashop',                label: 'PrestaShop',  icon: '/icons/extensions/prestashop.png'   },
   { slug: 'public-image-url',          label: 'Public Image URL', icon: '/icons/extensions/public-image-url.png' },
   { slug: 'shopify',                   label: 'Shopify',          icon: '/icons/extensions/shopify.png'  },
+  { slug: 'shopware6',                 label: 'Shopware 6',       icon: '/icons/extensions/shopware6.png' },
   { slug: 'supplier-data-portal',      label: 'Supplier Portal',  icon: '/icons/extensions/supplier-data-portal.png' },
   { slug: 'woocommerce',               label: 'WooCommerce',      icon: '/icons/extensions/woocommerce.png' },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML', icon: '/icons/extensions/woocommerce-wpml.png' },
+  { slug: 'xml-connector',             label: 'XML Connector',    icon: '/icons/extensions/xml-connector.svg' },
 ]
 </script>
 
@@ -186,8 +188,6 @@ const extensions = [
 }
 
 .ext-panel {
-  max-height: calc(100vh - var(--vp-nav-height) - 40px);
-  overflow-y: auto;
   background: var(--vp-c-bg-elv);
   border: 1px solid var(--vp-c-divider);
   border-radius: 14px;
@@ -208,6 +208,8 @@ const extensions = [
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2px;
+  max-height: 382px; /* exactly 4 rows: 4×94px items + 3×2px gaps */
+  overflow-y: auto;
 }
 
 .ext-item {
@@ -249,10 +251,10 @@ const extensions = [
   word-break: break-word;
 }
 
-.ext-panel::-webkit-scrollbar { width: 5px; }
-.ext-panel::-webkit-scrollbar-track { background: transparent; }
-.ext-panel::-webkit-scrollbar-thumb { background: var(--vp-c-divider); border-radius: 3px; }
-.ext-panel::-webkit-scrollbar-thumb:hover { background: var(--vp-c-text-3); }
+.ext-grid::-webkit-scrollbar { width: 5px; }
+.ext-grid::-webkit-scrollbar-track { background: transparent; }
+.ext-grid::-webkit-scrollbar-thumb { background: var(--vp-c-divider); border-radius: 3px; }
+.ext-grid::-webkit-scrollbar-thumb:hover { background: var(--vp-c-text-3); }
 
 .fade-panel-enter-active,
 .fade-panel-leave-active {

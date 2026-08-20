@@ -145,7 +145,6 @@ function switchTo(lang: string) {
   if (lang === 'en') {
     const expired = 'expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'
     const host = location.hostname
-    // Build every domain variant GT might have used and clear them all.
     const domains: string[] = ['', host, `.${host}`]
     const parts = host.split('.')
     if (parts.length > 2) {
