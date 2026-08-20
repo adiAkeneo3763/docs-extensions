@@ -74,6 +74,7 @@ const extensions = [
   { slug: 'supplier-data-portal',      label: 'Supplier Portal',  icon: '/icons/extensions/supplier-data-portal.png' },
   { slug: 'woocommerce',               label: 'WooCommerce',      icon: '/icons/extensions/woocommerce.png' },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML', icon: '/icons/extensions/woocommerce-wpml.png' },
+  { slug: 'zapier',                    label: 'Zapier',           icon: '/icons/extensions/zapier.png' },
 ]
 </script>
 

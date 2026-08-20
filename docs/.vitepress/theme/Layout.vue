@@ -37,6 +37,7 @@ const extensions = [
   { slug: 'supplier-data-portal',      label: 'Supplier Portal'    },
   { slug: 'woocommerce',               label: 'WooCommerce'        },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML'   },
+  { slug: 'zapier',                    label: 'Zapier'             },
 ]
 
 let observer: MutationObserver | null = null
