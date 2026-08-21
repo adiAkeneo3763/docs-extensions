@@ -26,6 +26,7 @@ const extensions = [
   { slug: 'deepl',                     label: 'DeepL Translator'   },
   { slug: 'erpnext',                   label: 'ERPNext'            },
   { slug: 'google-shopping',           label: 'Google Shopping'    },
+  { slug: 'history-preview',           label: 'History Preview',  icon: '/icons/extensions/history-preview.svg' },
   { slug: 'job-scheduler',             label: 'Job Scheduler'      },
   { slug: 'maker-checker-workflow',    label: 'Maker Checker'      },
   { slug: 'magento2',                  label: 'Magento 2'          },
@@ -39,7 +40,7 @@ const extensions = [
   { slug: 'woocommerce',               label: 'WooCommerce'        },
   { slug: 'woocommerce-wpml',          label: 'WooCommerce WPML'   },
   { slug: 'zapier',                    label: 'Zapier'             },
-  { slug: 'xml-connector',             label: 'XML Connector'      },
+  { slug: 'xml-connector',             label: 'XML Connector',    icon: '/icons/extensions/xml-connector.svg' },
 ]
 
 let observer: MutationObserver | null = null
@@ -98,7 +99,7 @@ onBeforeUnmount(() => {
               class="mobile-ext-item"
             >
               <img
-                :src="`/icons/extensions/${ext.slug}.png`"
+                :src="(ext as any).icon ?? `/icons/extensions/${ext.slug}.png`"
                 :alt="ext.label"
                 class="mobile-ext-item-icon"
                 width="22"

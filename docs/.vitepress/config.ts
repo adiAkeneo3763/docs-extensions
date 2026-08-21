@@ -30,6 +30,7 @@ const projects = [
   { slug: 'deepl', label: 'DeepL Translator' },
   { slug: 'erpnext', label: 'ERPNext' },
   { slug: 'google-shopping', label: 'Google Shopping' },
+  { slug: 'history-preview', label: 'History Preview' },
   { slug: 'job-scheduler', label: 'Job Scheduler' },
   { slug: 'maker-checker-workflow', label: 'Maker Checker Workflow' },
   { slug: 'magento2', label: 'Magento 2' },

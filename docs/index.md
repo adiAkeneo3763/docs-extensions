@@ -72,6 +72,10 @@ features:
     details: Export product data from UnoPim to Google Shopping and Merchant Center.
     link: /google-shopping/
     linkText: Read docs
+  - title: History Preview
+    details: View and compare previous versions of product data directly within UnoPim.
+    link: /history-preview/
+    linkText: Read docs
   - title: Job Scheduler
     details: Automate import and export tasks.
     link: /job-scheduler/

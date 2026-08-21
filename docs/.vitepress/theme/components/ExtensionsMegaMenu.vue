@@ -63,6 +63,7 @@ const extensions = [
   { slug: 'deepl',                     label: 'DeepL Translator', icon: '/icons/extensions/deepl.png'    },
   { slug: 'erpnext',                   label: 'ERPNext',          icon: '/icons/extensions/erpnext.png'  },
   { slug: 'google-shopping',           label: 'Google Shopping',  icon: '/icons/extensions/google-shopping.png' },
+  { slug: 'history-preview',           label: 'History Preview',  icon: '/icons/extensions/history-preview.svg' },
   { slug: 'job-scheduler',             label: 'Job Scheduler',    icon: '/icons/extensions/job-scheduler.png' },
   { slug: 'maker-checker-workflow',    label: 'Maker Checker',    icon: '/icons/extensions/maker-checker-workflow.png' },
   { slug: 'magento2',                  label: 'Magento 2',        icon: '/icons/extensions/magento2.png' },
