@@ -27,6 +27,7 @@ const projects = [
   { slug: 'cloudflare-r2-integration', label: 'Cloudflare R2 Integration' },
   { slug: 'cs-cart', label: 'CS-Cart' },
   { slug: 'dam', label: 'DAM' },
+  { slug: 'dam-webdav', label: 'DAM NextCloud' },
   { slug: 'deepl', label: 'DeepL Translator' },
   { slug: 'erpnext', label: 'ERPNext' },
   { slug: 'google-shopping', label: 'Google Shopping' },

@@ -60,6 +60,10 @@ features:
     details: Digital Asset Management for images and media.
     link: /dam/
     linkText: Read docs
+  - title: DAM NextCloud
+    details: Mount your UnoPim DAM as a Nextcloud-compatible WebDAV drive. Share scoped, revocable folders with external users.
+    link: /dam-webdav/
+    linkText: Read docs
   - title: DeepL Translation
     details: Automatically generate translations from one locale to other locales.
     link: /deepl/

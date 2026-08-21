@@ -60,6 +60,7 @@ const extensions = [
   { slug: 'cloudflare-r2-integration', label: 'Cloudflare R2', icon: '/icons/extensions/cloudflare-r2-integration.png' },
   { slug: 'cs-cart',                   label: 'CS-Cart',     icon: '/icons/extensions/cs-cart.png'      },
   { slug: 'dam',                       label: 'DAM',              icon: '/icons/extensions/dam.png'      },
+  { slug: 'dam-webdav',               label: 'DAM NextCloud',    icon: '/icons/extensions/dam-webdav.png' },
   { slug: 'deepl',                     label: 'DeepL Translator', icon: '/icons/extensions/deepl.png'    },
   { slug: 'erpnext',                   label: 'ERPNext',          icon: '/icons/extensions/erpnext.png'  },
   { slug: 'google-shopping',           label: 'Google Shopping',  icon: '/icons/extensions/google-shopping.png' },

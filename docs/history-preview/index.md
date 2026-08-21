@@ -6,13 +6,6 @@ Store Link: [View on Webkul Store](https://store.webkul.com/unopim-history-previ
 
 The **History Preview & Restore** extension adds inline file thumbnails and one-click version restore to UnoPim's built-in History tab. It works across every module that uses the History trait — products, categories, attributes, channels, DAM assets, users, roles, and more — without any edits to core.
 
-<br>
-
-<div align="center">
-  <img src="./images/intro-banner.png" alt="UnoPim History Preview & Restore" width="100%" style="max-height:330px; object-fit:cover; border-radius:18px;" />
-</div>
-
-<br>
 
 ## What you can do
 
