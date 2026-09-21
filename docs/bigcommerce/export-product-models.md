@@ -2,7 +2,7 @@
 
 Push **configurable products** (one parent + multiple variants) from UnoPim to BigCommerce. The connector creates a BigCommerce **variable product** with one option per variation axis (e.g. *size* + *color*) and one SKU per variant combination.
 
-For non-configurable products, use [Export products](./export-products) instead.
+This job exports **only** configurable products. To export your whole catalog (simple and configurable) in one run, use [Export products](./export-products) instead.
 
 > **Before you start.** Add a [BigCommerce credential](./credentials), configure [Attribute mapping](./standard-mapping) (including the [variant option types](./standard-mapping#variant-option-types)), and review [Other mapping](./other-mapping) before exporting configurable products.
 

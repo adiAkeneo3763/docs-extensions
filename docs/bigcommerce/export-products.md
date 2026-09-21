@@ -1,8 +1,8 @@
 # Export products
 
-Push **simple products** from UnoPim to BigCommerce - with attribute values, prices, stock, statuses, custom fields, and images.
+Push products from UnoPim to BigCommerce - with attribute values, prices, stock, statuses, custom fields, and images. This job exports **all** your products: simple products, and configurable products together with their variants.
 
-For configurable products with variants, use [Export configurable products](./export-product-models).
+To export **only** configurable products, use [Export configurable products](./export-product-models).
 
 > **Before you start.** Add a [BigCommerce credential](./credentials), configure [Attribute mapping](./standard-mapping), and run [Export categories](./export-categories) so the categories the products reference already exist in BigCommerce.
 
@@ -24,7 +24,7 @@ Set the **Type** to **Export Products to BigCommerce** and give it a **Code** - 
 
 ### 2. Choose what to export
 
-Everything except the credential is optional. The filters are grouped into four areas on the export form. Leave a whole area empty to skip it - an export with no filters pushes every eligible simple product visible to the user.
+Everything except the credential is optional. The filters are grouped into four areas on the export form. Leave a whole area empty to skip it - an export with no filters pushes every eligible product visible to the user (both simple and configurable).
 
 #### Data to export
 
