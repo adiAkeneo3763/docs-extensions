@@ -76,7 +76,7 @@ php artisan optimize:clear
 
 ## Verify the Installation
 
-Once all commands have run successfully, log in to your UnoPim dashboard. You should see an **Odoo** menu **(1)** in the left sidebar - this confirms the connector has been installed correctly.
+Once all commands have run successfully, log in to your UnoPim dashboard. You should see an **Odoo** menu in the left sidebar - this confirms the connector has been installed correctly.
 
 ![Odoo menu in the UnoPim sidebar](./assets/installation/odoo-menu.webp)
 

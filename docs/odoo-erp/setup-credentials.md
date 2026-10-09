@@ -5,7 +5,7 @@ Once the connector is installed, the next step is to connect your Odoo store to 
 
 ## Step 1 - Open the Credentials Page
 
-Log in to your UnoPim dashboard and click **Odoo (1)** in the left sidebar. The **Credentials** list opens. Click **Create Credential (2)**.
+Log in to your UnoPim dashboard and click **Odoo** in the left sidebar. The **Credentials** list opens. Click **Create Credential**.
 
 ![Credentials list](./assets/odoo-credentials/credentials-list.webp)
 
@@ -14,14 +14,14 @@ Log in to your UnoPim dashboard and click **Odoo (1)** in the left sidebar. The 
 
 A dialog opens. Fill in the following fields:
 
-| # | Field | What to enter |
-|---|---|---|
-| 1 | **Store URL** | The full URL of your Odoo server (e.g., `https://mystore.odoo.com`) |
-| 2 | **Database Name** | The name of your Odoo database |
-| 3 | **Username** | Your Odoo login (usually the admin email) |
-| 4 | **Password** | The password or API key for that Odoo user |
+| Field | What to enter |
+|---|---|
+| **Store URL** | The full URL of your Odoo server (e.g., `https://mystore.odoo.com`) |
+| **Database Name** | The name of your Odoo database |
+| **Username** | Your Odoo login (usually the admin email) |
+| **Password** | The password or API key for that Odoo user |
 
-Click **Save (5)**. UnoPim checks the connection before saving.
+Click **Save**. UnoPim checks the connection before saving.
 
 ![Create Credential dialog](./assets/odoo-credentials/create-credential.webp)
 
@@ -30,7 +30,7 @@ Click **Save (5)**. UnoPim checks the connection before saving.
 
 ## Step 3 - Review the Credential
 
-After saving, the credential's edit page opens on the **General (1)** tab. You can update the **Database Name (2)**, **Username (3)** and **Password (4)** here at any time. The Store URL cannot be changed once the credential is created.
+After saving, the credential's edit page opens on the **General** tab. You can update the **Database Name**, **Username** and **Password** here at any time. The Store URL cannot be changed once the credential is created.
 
 ![Edit Credential - General tab](./assets/odoo-credentials/edit-credential.webp)
 
@@ -51,20 +51,20 @@ Scroll down to **Store Configuration**. These settings decide how products are e
 
 ![Store Configuration](./assets/odoo-credentials/store-configuration.webp)
 
-| # | Setting | What it does |
-|---|---|---|
-| 1 | **Odoo Allowed Company Id** | The Odoo company to export products to. Leave it blank to export to all companies. |
-| 2 | **Default Locale** | The UnoPim locale that matches your Odoo store's language, e.g. `English (United States)`. |
-| 3 | **Default Currency** | The currency used for prices in Odoo, e.g. `US Dollar` or `Euro`. |
-| 4 | **Default Product Identifier** | How products are matched in Odoo: **Internal Reference** (`default_code`) or **Barcode** (`barcode`). |
-| 5 | **Categories export as E-Commerce categories** | Turn on to export UnoPim categories as **Odoo eCommerce categories** instead of internal product categories. |
+| Setting | What it does |
+|---|---|
+| **Odoo Allowed Company Id** | The Odoo company to export products to. Leave it blank to export to all companies. |
+| **Default Locale** | The UnoPim locale that matches your Odoo store's language, e.g. `English (United States)`. |
+| **Default Currency** | The currency used for prices in Odoo, e.g. `US Dollar` or `Euro`. |
+| **Default Product Identifier** | How products are matched in Odoo: **Internal Reference** (`default_code`) or **Barcode** (`barcode`). |
+| **Categories export as E-Commerce categories** | Turn on to export UnoPim categories as **Odoo eCommerce categories** instead of internal product categories. |
 
 > **Tip:** Pick the product identifier before your first product export. The connector uses it to find existing products in Odoo, so changing it later can create duplicates.
 
 
 ## Step 5 - Save Your Changes
 
-As soon as you change a field, an **unsaved changes** bar appears at the bottom of the page. Click **Save changes (1)** to store the credential, or **Discard** to undo.
+As soon as you change a field, an **unsaved changes** bar appears at the bottom of the page. Click **Save changes** to store the credential, or **Discard** to undo.
 
 ![Save changes bar](./assets/odoo-credentials/save-credential.webp)
 

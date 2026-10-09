@@ -8,7 +8,7 @@ When you export categories to Odoo, the connector uses the category field mappin
 
 ## Open the Category Field Mapping
 
-Go to **Odoo → Credentials**, edit your credential and open the **Category Field Mapping (1)** tab.
+Go to **Odoo → Credentials**, edit your credential and open the **Category Field Mapping** tab.
 
 ![Category Field Mapping](./assets/attribute-mapping/category-mapping.webp)
 
@@ -22,11 +22,11 @@ The screen has three columns:
 
 ## Mappable category fields
 
-| # | Odoo field | Type | Notes |
-| --- | --- | --- | --- |
-| 2 | **Name** `[name]` | Text | Required. The category name in Odoo. |
-| 3 | **Description** `[website_description]` | Textarea | Category description, shown on eCommerce category pages. |
-| 4 | **Image** `[image_1920]` | Image | Category image. |
+| Odoo field | Type | Notes |
+| --- | --- | --- |
+| **Name** `[name]` | Text | Required. The category name in Odoo. |
+| **Description** `[website_description]` | Textarea | Category description, shown on eCommerce category pages. |
+| **Image** `[image_1920]` | Image | Category image. |
 
 > **Note:** The category tree (parent and child categories) is exported automatically - you don't need to map it.
 

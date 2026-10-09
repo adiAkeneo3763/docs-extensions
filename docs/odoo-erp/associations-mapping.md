@@ -10,17 +10,17 @@ This mapping is used by both the [Product Associations export](./export-product-
 
 ## Open the Associations Mapping
 
-Go to **Odoo → Credentials**, edit your credential and open the **Associations Mapping (1)** tab.
+Go to **Odoo → Credentials**, edit your credential and open the **Associations Mapping** tab.
 
 ![Associations Mapping](./assets/attribute-mapping/associations-mapping.webp)
 
 ## Odoo association fields
 
-| # | Odoo field | Where it appears in Odoo | Odoo app needed |
-| --- | --- | --- | --- |
-| 2 | **Optional Products** `[optional_product_ids]` | Offered as add-ons when the product is added to the cart or a sales order. | Sales (`sale`) |
-| 3 | **Accessory Products** `[accessory_product_ids]` | Suggested in the cart. Linked configurable products are sent as all their variants. | eCommerce (`website_sale`) |
-| 4 | **Alternative Products** `[alternative_product_ids]` | Shown on the product page as alternatives to the product. | eCommerce (`website_sale`) |
+| Odoo field | Where it appears in Odoo | Odoo app needed |
+| --- | --- | --- |
+| **Optional Products** `[optional_product_ids]` | Offered as add-ons when the product is added to the cart or a sales order. | Sales (`sale`) |
+| **Accessory Products** `[accessory_product_ids]` | Suggested in the cart. Linked configurable products are sent as all their variants. | eCommerce (`website_sale`) |
+| **Alternative Products** `[alternative_product_ids]` | Shown on the product page as alternatives to the product. | eCommerce (`website_sale`) |
 
 For each Odoo field, choose a **UnoPim Association Type** from the dropdown, or **Not mapped** to skip the field.
 

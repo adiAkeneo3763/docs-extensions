@@ -10,13 +10,13 @@ Only **select**, **multiselect** and **checkbox** attributes are exported - thes
 
 ## Step 1 - Open Exports
 
-In the sidebar, go to **Data Transfer (1) → Exports (2)** and click **Create Export (3)**.
+In the sidebar, go to **Data Transfer → Exports** and click **Create Export**.
 
 ![Exports list](./assets/export-jobs/exports-list.webp)
 
 ## Step 2 - Enter a Code and Select the Type
 
-Enter a unique **Code (1)** for the job, e.g. `odoo_attribute_export`. Open the **Type (2)** dropdown and choose **Odoo Attribute (3)**.
+Enter a unique **Code** for the job, e.g. `odoo_attribute_export`. Open the **Type** dropdown and choose **Odoo Attribute**.
 
 ![Choose an Odoo export type](./assets/export-jobs/export-type.webp)
 
@@ -24,13 +24,13 @@ Enter a unique **Code (1)** for the job, e.g. `odoo_attribute_export`. Open the 
 
 ![Odoo Attribute export filters](./assets/export-jobs/attribute-filters.webp)
 
-| # | Filter | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to export to. Required. |
-| 2 | **Channel** | The UnoPim channel to read labels from. Required. |
-| 3 | **Locale** | One or more locales for the attribute and option labels. Required. |
-| 4 | **Odoo Display Type** | How the attribute is shown in Odoo: **Select**, **Radio**, **Color**, **Pills** or **Multi-checkbox**. Required. |
-| 5 | **Attributes** | Pick the attributes to export. Leave it empty to export every select, multiselect and checkbox attribute. |
+| Filter | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to export to. Required. |
+| **Channel** | The UnoPim channel to read labels from. Required. |
+| **Locale** | One or more locales for the attribute and option labels. Required. |
+| **Odoo Display Type** | How the attribute is shown in Odoo: **Select**, **Radio**, **Color**, **Pills** or **Multi-checkbox**. Required. |
+| **Attributes** | Pick the attributes to export. Leave it empty to export every select, multiselect and checkbox attribute. |
 
 > **Variant creation mode:** attributes exported with the **Multi-checkbox** display type are created in Odoo with variant creation set to **Never** - they describe the product but don't create variants. All other display types use **Instantly**, so they can create variants. If an attribute is already used on products in Odoo, its variant creation mode is left unchanged and a warning is written to the job log.
 
@@ -40,13 +40,13 @@ Click **Save changes** in the bar at the bottom of the page. The export job page
 
 ## Step 5 - Run the Export
 
-Click **Export Now (1)** to start the job.
+Click **Export Now** to start the job.
 
 ![Export Now](./assets/export-jobs/export-now.webp)
 
 ## Step 6 - Check the Result
 
-UnoPim opens the **Job Tracker**. When the job finishes you'll see how many records were **created (1)** and **updated (2)** in Odoo. Click **Download log (3)** to see warnings or errors for individual attributes.
+UnoPim opens the **Job Tracker**. When the job finishes you'll see how many records were **created** and **updated** in Odoo. Click **Download log** to see warnings or errors for individual attributes.
 
 ![Attribute export completed](./assets/export-jobs/attribute-export-completed.webp)
 

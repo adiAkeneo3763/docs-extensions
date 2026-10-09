@@ -18,12 +18,12 @@ Go to **Data Transfer → Exports** and click **Create Export**. Enter a unique 
 
 ![Odoo Category export filters](./assets/export-jobs/category-filters.webp)
 
-| # | Filter | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to export to. Required. |
-| 2 | **Channel** | The UnoPim channel to export from. Required. |
-| 3 | **Locale** | One or more locales for the category names. Required. |
-| 4 | **Filter By Code** | Optional. Enter category codes to export only those categories. Leave empty to export all of them. |
+| Filter | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to export to. Required. |
+| **Channel** | The UnoPim channel to export from. Required. |
+| **Locale** | One or more locales for the category names. Required. |
+| **Filter By Code** | Optional. Enter category codes to export only those categories. Leave empty to export all of them. |
 
 ## Step 3 - Save and Run
 

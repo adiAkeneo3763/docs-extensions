@@ -26,12 +26,12 @@ The filters pick which products' links are exported. They are the same as the [p
 
 ![Odoo Product Associations export filters](./assets/export-jobs/product-association-filters.webp)
 
-| # | Filter | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to export to. Required. |
-| 2 | **Identifiers** | Export links only for these SKUs. Leave empty for all products. |
-| 3 | **Channel** | Required. |
-| 4 | **Locale** | Required. |
+| Filter | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to export to. Required. |
+| **Identifiers** | Export links only for these SKUs. Leave empty for all products. |
+| **Channel** | Required. |
+| **Locale** | Required. |
 
 You can also narrow the products by family, category, completeness, update time, attribute conditions and status.
 

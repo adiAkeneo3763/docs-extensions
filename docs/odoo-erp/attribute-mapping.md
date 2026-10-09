@@ -12,17 +12,17 @@ Since version 1.3.0, the mapping belongs to the **credential**. If you connect m
 
 1. Go to **Odoo → Credentials**.
 2. Click the **edit** icon of the credential you want to configure.
-3. Open the **Attribute Mapping (1)** tab.
+3. Open the **Attribute Mapping** tab.
 
 ![Attribute Mapping](./assets/attribute-mapping/attribute-mapping.webp)
 
 ## How the mapping screen works
 
-| # | Column | Purpose |
-| --- | --- | --- |
-| 2 | **Odoo Fields** | Destination fields in Odoo. The technical field name is shown in brackets, e.g. `[default_code]`. Required fields are marked with `*`. |
-| 3 | **UnoPim Attributes** | The UnoPim attribute whose value is written to the Odoo field. Only attributes of a matching type are listed. |
-| 4 | **Fixed Value** | A value written to the Odoo field for every exported product, regardless of UnoPim data. |
+| Column | Purpose |
+| --- | --- |
+| **Odoo Fields** | Destination fields in Odoo. The technical field name is shown in brackets, e.g. `[default_code]`. Required fields are marked with `*`. |
+| **UnoPim Attributes** | The UnoPim attribute whose value is written to the Odoo field. Only attributes of a matching type are listed. |
+| **Fixed Value** | A value written to the Odoo field for every exported product, regardless of UnoPim data. |
 
 Use **Fixed Value** when all exported products should share the same value for a field (for example, a default product type or route). Each field takes either an attribute or a fixed value - selecting one disables the other.
 

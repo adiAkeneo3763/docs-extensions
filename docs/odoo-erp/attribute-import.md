@@ -12,13 +12,13 @@ Set up an [Odoo credential](./setup-credentials) first.
 
 ## Step 1 - Open Imports
 
-In the sidebar, go to **Data Transfer (1) → Imports (2)** and click **Create Import (3)**.
+In the sidebar, go to **Data Transfer → Imports** and click **Create Import**.
 
 ![Imports list](./assets/import-jobs/imports-list.webp)
 
 ## Step 2 - Enter a Code and Select the Type
 
-Enter a unique **Code (1)**, e.g. `odoo_attribute_import`. Open the **Type (2)** dropdown and choose **Odoo Attribute (3)**.
+Enter a unique **Code**, e.g. `odoo_attribute_import`. Open the **Type** dropdown and choose **Odoo Attribute**.
 
 ![Choose an Odoo import type](./assets/import-jobs/import-type.webp)
 
@@ -26,11 +26,11 @@ Enter a unique **Code (1)**, e.g. `odoo_attribute_import`. Open the **Type (2)**
 
 ![Odoo Attribute import settings](./assets/import-jobs/attribute-import-settings.webp)
 
-| # | Field | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to import from. Required. |
-| 2 | **Channel** | The UnoPim channel to import into. Required. |
-| 3 | **Locale** | One or more UnoPim locales for the imported labels. Required. |
+| Field | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to import from. Required. |
+| **Channel** | The UnoPim channel to import into. Required. |
+| **Locale** | One or more UnoPim locales for the imported labels. Required. |
 
 ## Step 4 - Save the Import
 
@@ -38,7 +38,7 @@ Click **Save changes** in the bar at the bottom of the page. The import job page
 
 ## Step 5 - Run the Import
 
-Click **Import Now (1)** to start the job.
+Click **Import Now** to start the job.
 
 ![Import Now](./assets/import-jobs/import-now.webp)
 

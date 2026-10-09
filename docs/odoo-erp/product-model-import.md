@@ -13,13 +13,13 @@ The **Odoo Product Model** import job reads product templates that have variants
 
 ## Step 1 - Open Imports
 
-In the sidebar, go to **Data Transfer (1) → Imports (2)** and click **Create Import (3)**.
+In the sidebar, go to **Data Transfer → Imports** and click **Create Import**.
 
 ![Imports list](./assets/import-jobs/imports-list.webp)
 
 ## Step 2 - Enter a Code and Select the Type
 
-Enter a unique **Code (1)**, e.g. `odoo_product_model_import`. Open the **Type (2)** dropdown and choose **Odoo Product Model (3)**.
+Enter a unique **Code**, e.g. `odoo_product_model_import`. Open the **Type** dropdown and choose **Odoo Product Model**.
 
 ![Choose an Odoo import type](./assets/import-jobs/import-type.webp)
 
@@ -27,13 +27,13 @@ Enter a unique **Code (1)**, e.g. `odoo_product_model_import`. Open the **Type (
 
 ![Odoo Product Model import settings](./assets/import-jobs/product-model-import-settings.webp)
 
-| # | Field | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to import from. Required. |
-| 2 | **Channel** | The UnoPim channel to import into. Required. |
-| 3 | **Locale** | One or more UnoPim locales for the imported labels. Required. |
-| 4 | **Family** | The UnoPim attribute family the imported product models are created in. Required. |
-| 5 | **With Media** | Turn on to import product images as well. |
+| Field | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to import from. Required. |
+| **Channel** | The UnoPim channel to import into. Required. |
+| **Locale** | One or more UnoPim locales for the imported labels. Required. |
+| **Family** | The UnoPim attribute family the imported product models are created in. Required. |
+| **With Media** | Turn on to import product images as well. |
 
 ## Step 4 - Save the Import
 
@@ -41,7 +41,7 @@ Click **Save changes** in the bar at the bottom of the page. The import job page
 
 ## Step 5 - Run the Import
 
-Click **Import Now (1)** to start the job.
+Click **Import Now** to start the job.
 
 ![Import Now](./assets/import-jobs/import-now.webp)
 

@@ -25,21 +25,21 @@ The Odoo product export uses the same filters as UnoPim's own product export, pl
 
 ![Odoo Product export filters](./assets/export-jobs/product-filters.webp)
 
-| # | Filter | What it does |
-|---|---|---|
-| 1 | **Odoo credentials** | The Odoo store to export to. Required. |
-| 2 | **Identifiers** | Paste SKUs (one per line) to export only those products. Leave empty to export all products. |
-| 3 | **Channel** | The UnoPim channel to read values from. Required. |
-| 4 | **Locale** | One or more locales to export. Required. |
-| 5 | **Currencies** | The price currencies to export. |
-| 6 | **Attributes** | Export only the selected attributes. Leave empty to export every mapped attribute. |
-| 7 | **Attribute Families** | Export only products of the selected families. |
-| 8 | **Categories** | Export only products in the selected categories. |
-| 9 | **Completeness** | No condition, complete on at least one selected locale, or complete on all selected locales. |
-| 10 | **Time Condition** | Export products updated in the last N days, since the last export, or between two dates. |
-| 11 | **Attribute conditions** | Add conditions on attribute values, e.g. *brand equals Acme*. |
-| 12 | **Status** | Export enabled, disabled or all products. |
-| 13 | **With Media** | Turn on to export the main image and gallery images. |
+| Filter | What it does |
+|---|---|
+| **Odoo credentials** | The Odoo store to export to. Required. |
+| **Identifiers** | Paste SKUs (one per line) to export only those products. Leave empty to export all products. |
+| **Channel** | The UnoPim channel to read values from. Required. |
+| **Locale** | One or more locales to export. Required. |
+| **Currencies** | The price currencies to export. |
+| **Attributes** | Export only the selected attributes. Leave empty to export every mapped attribute. |
+| **Attribute Families** | Export only products of the selected families. |
+| **Categories** | Export only products in the selected categories. |
+| **Completeness** | No condition, complete on at least one selected locale, or complete on all selected locales. |
+| **Time Condition** | Export products updated in the last N days, since the last export, or between two dates. |
+| **Attribute conditions** | Add conditions on attribute values, e.g. *brand equals Acme*. |
+| **Status** | Export enabled, disabled or all products. |
+| **With Media** | Turn on to export the main image and gallery images. |
 
 > **Tip:** Use **Time Condition → Updated products since last export** for scheduled jobs. Each run only sends what changed.
 
