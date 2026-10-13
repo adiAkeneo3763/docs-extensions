@@ -1,5 +1,11 @@
 # UnoPim Icecat Connector
 
+<div align="center">
+  <img src="./images/icecat-banner.png" alt="UnoPim Icecat Connector" width="100%" style="height:auto; border-radius:8px;" />
+</div>
+
+<br>
+
 The **UnoPim Icecat Connector** enriches your product catalog by pulling structured data directly from the [Icecat Open Catalog](https://icecat.us/). It imports specifications, descriptions, images, GPSR compliance details, and other product details to help you maintain accurate and consistent product information at scale.
 
 Products can be enriched in bulk via the **Icecat Import Enrich Product** job, or individually from the product edit page via **More → Icecat Fetch**.
