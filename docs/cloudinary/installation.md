@@ -83,13 +83,18 @@ To allow admin users to access and manage the connector:
 2. Navigate to **Settings → Roles**.
 3. Edit the desired user role (e.g., Administrator).
 4. Under the **Permissions** tree, ensure the **Cloudinary** permissions are checked:
-   - **Cloudinary** - Base permission to view the menu item.
-   - **Settings** - View and update Cloudinary credentials.
+   - **Cloudinary** - Base permission to view the Cloudinary navigation section.
+   - **Credentials** - View and update Cloudinary API credentials.
+   - **Settings** - View and update image transformation and optimization settings.
    - **Products** - Sync product media with Cloudinary.
 5. Click **Save Role**.
 
-<!-- Screenshot Placeholder: Role Permissions -->
-<!-- TODO: Add screenshot showing UnoPim Settings -> Roles -> Cloudinary permissions enabled -->
+<!-- ============================================================ -->
+<!-- SCREENSHOT PLACEHOLDER: Role Permissions                     -->
+<!-- IMAGE_NAME: role-permissions.png                             -->
+<!-- Location: docs/cloudinary/images/role-permissions.png        -->
+<!-- Description: UnoPim Settings -> Roles -> Permissions tree with Cloudinary, Credentials, Settings, and Products checked -->
+<!-- ============================================================ -->
 ![Role Permissions](./images/role-permissions.png)
 
 ---

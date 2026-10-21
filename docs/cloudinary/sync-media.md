@@ -16,10 +16,14 @@ When **Auto Sync Product Images** is set to **Yes** in the connector configurati
 
 ## 2. Bulk Media Sync via Admin UI
 
-If you already have existing products with local images prior to installing the connector, or if you need to migrate media between local storage and Cloudinary in batch, use the **Bulk Media Sync** section located on the Cloudinary settings page.
+If you already have existing products with local images prior to installing the connector, or if you need to migrate media between local storage and Cloudinary in batch, use the **Bulk Media Sync** section located at the bottom of the Cloudinary configuration page (**Cloudinary → Credentials**).
 
-<!-- Screenshot Placeholder: Bulk Media Sync Section -->
-<!-- TODO: Add screenshot of the Bulk Media Sync section at the bottom of the Cloudinary configuration page -->
+<!-- ============================================================ -->
+<!-- SCREENSHOT PLACEHOLDER: Bulk Media Sync Section              -->
+<!-- IMAGE_NAME: bulk-media-sync.png                              -->
+<!-- Location: docs/cloudinary/images/bulk-media-sync.png         -->
+<!-- Description: Bulk Media Sync card showing Sync all media and Pull all media buttons -->
+<!-- ============================================================ -->
 ![Bulk Media Sync Section](./images/bulk-media-sync.png)
 
 ### Sync all media to Cloudinary

@@ -10,7 +10,8 @@
   {
     "text": "Configuration",
     "items": [
-      { "text": "Setup Credentials & Settings", "link": "/cloudinary/setup" }
+      { "text": "Credentials Setup", "link": "/cloudinary/setup" },
+      { "text": "Image Transformations", "link": "/cloudinary/transformations" }
     ]
   },
   {

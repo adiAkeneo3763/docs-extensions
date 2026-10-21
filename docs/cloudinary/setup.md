@@ -7,13 +7,17 @@ After installing the connector, the next step is connecting your Cloudinary acco
 ## Accessing the Configuration Page
 
 1. Log in to your UnoPim admin panel.
-2. In the left-hand navigation sidebar, click on **Cloudinary**.
+2. In the left-hand navigation sidebar, click on **Cloudinary → Credentials**.
 
-<!-- Screenshot Placeholder: Cloudinary Sidebar Menu -->
-<!-- TODO: Add screenshot showing UnoPim left sidebar with Cloudinary menu clicked -->
+<!-- ============================================================ -->
+<!-- SCREENSHOT PLACEHOLDER: Cloudinary Sidebar Navigation        -->
+<!-- IMAGE_NAME: cloudinary-sidebar-menu.png                      -->
+<!-- Location: docs/cloudinary/images/cloudinary-sidebar-menu.png -->
+<!-- Description: UnoPim left navigation bar showing Cloudinary expanded with Credentials and Settings submenus -->
+<!-- ============================================================ -->
 ![Cloudinary Menu Navigation](./images/cloudinary-sidebar-menu.png)
 
-You will be redirected to the **Cloudinary Configuration** page.
+You will be directed to the **Cloudinary Connector Configuration** page.
 
 ---
 
@@ -21,8 +25,12 @@ You will be redirected to the **Cloudinary Configuration** page.
 
 Fill in the configuration fields using the credentials obtained from your Cloudinary Console (refer to [Cloudinary Setup](./cloudinary-setup.md)):
 
-<!-- Screenshot Placeholder: Cloudinary Configuration Form -->
-<!-- TODO: Add screenshot showing the UnoPim Cloudinary Configuration form with fields filled in -->
+<!-- ============================================================ -->
+<!-- SCREENSHOT PLACEHOLDER: Cloudinary Credentials Form          -->
+<!-- IMAGE_NAME: cloudinary-configuration-form.png                -->
+<!-- Location: docs/cloudinary/images/cloudinary-configuration-form.png -->
+<!-- Description: Full page view of the Cloudinary Credentials configuration form (/admin/cloudinary/credentials) -->
+<!-- ============================================================ -->
 ![Cloudinary Configuration Form](./images/cloudinary-configuration-form.png)
 
 ### Field Reference
@@ -31,7 +39,7 @@ Fill in the configuration fields using the credentials obtained from your Cloudi
 |---|---|---|
 | **Enable Connector** | Required | Toggle **Yes** to activate Cloudinary integration, or **No** to keep it inactive. |
 | **Auto Sync Product Images** | Required (if Enabled) | When set to **Yes**, product media is automatically uploaded to Cloudinary whenever a product is created or updated in UnoPim. |
-| **Cloud Name** | Required (if Enabled) | Your unique Cloudinary cloud identifier (e.g., `hozqyzud`). |
+| **Cloud Name** | Required (if Enabled) | Your unique Cloudinary cloud identifier (e.g., `unopim-cloud`). |
 | **API Key** | Required (if Enabled) | The API Key generated from your Cloudinary console. |
 | **API Secret** | Required (if Enabled) | The API Secret generated alongside your API Key. Once saved, UnoPim encrypts and masks this field for security. |
 | **Folder Name** | Optional | Target directory path in Cloudinary where media will be organized. Defaults to `unopim/products`. |
@@ -59,4 +67,8 @@ If you ever need to disable the connector:
 Before setting **Enable Connector** to **No**, always use the **Pull all media to local** button in the Bulk Media Sync section. This ensures all product images stored on Cloudinary are downloaded back to your local UnoPim storage, preventing broken image links.
 :::
 
-Head over to [Media Synchronization](./sync-media.md) to learn how to synchronize your existing product images.
+---
+
+## Next Step: Image Transformations
+
+Once your credentials are authenticated, configure dynamic image resizing, automated WebP/AVIF formatting, and AI object focus in [Image Transformations & Optimization](./transformations.md).

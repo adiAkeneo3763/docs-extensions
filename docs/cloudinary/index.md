@@ -9,6 +9,9 @@ Instead of keeping product assets on your local web server, the connector offloa
 ## Core Capabilities
 
 - **Automatic Media Sync:** Automatically upload new product images and gallery media to Cloudinary when products are saved.
+- **Dynamic Image Optimization:** Automatically serve images in modern formats (`f_auto`) such as WebP/AVIF with intelligent compression quality (`q_auto`).
+- **Smart AI Gravity & Focus:** Keep product focal points centered (`g_auto`) during responsive cropping and thumbnail generation.
+- **Flexible Resize & Crop Modes:** Choose from standard cropping algorithms (`c_fill`, `c_fit`, `c_pad`, `c_scale`, `none`) with default catalog width and height parameters.
 - **Bulk Media Synchronization:** Push existing catalog media from local storage to Cloudinary with one click or via CLI command.
 - **Bi-Directional Pull:** Safely pull media back from Cloudinary to local storage before disabling the connector or performing maintenance.
 - **Custom Folder Organization:** Specify a dedicated folder path in Cloudinary (e.g., `unopim/products`) to keep catalog assets organized.
@@ -33,5 +36,6 @@ Before installing the connector, verify that your environment meets the followin
 
 1. [Cloudinary Setup](./cloudinary-setup.md) - Find your Cloud Name, API Key, and API Secret in the Cloudinary Console.
 2. [Installation](./installation.md) - Register the package, run migrations, and configure permissions.
-3. [Setup Credentials & Settings](./setup.md) - Configure credentials and media sync behavior inside UnoPim.
-4. [Media Synchronization](./sync-media.md) - Manage bulk media sync and CLI synchronization.
+3. [Setup Credentials](./setup.md) - Configure credentials and media sync behavior inside UnoPim.
+4. [Image Transformations](./transformations.md) - Configure automatic optimization, AI focus, and crop modes.
+5. [Media Synchronization](./sync-media.md) - Manage bulk media sync and CLI synchronization.
